@@ -1,0 +1,870 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66422B8DDF3DB17F9E6508A5 /* Pods_Strivacity_StrivacityTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D126B61C9E79012F950B9F46 /* Pods_Strivacity_StrivacityTests.framework */; };
+		8FE88C7B2DF9A31FC9C29F41 /* Pods_Strivacity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E5AF3DF5C26D832C5173AA /* Pods_Strivacity.framework */; };
+		CE036332281541AB00DFD402 /* IBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8411728153FB60033D4A1 /* IBiometricManager.swift */; };
+		CE1059E6281049B80018B96B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1059E5281049B80018B96B /* StringExtension.swift */; };
+		CE2550B72819174C00AAE44C /* IUrlSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2550B62819174C00AAE44C /* IUrlSessionManager.swift */; };
+		CE2550B92819178900AAE44C /* UrlSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2550B82819178900AAE44C /* UrlSessionManager.swift */; };
+		CE2550BB281941DA00AAE44C /* IAuthServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2550BA281941DA00AAE44C /* IAuthServiceProvider.swift */; };
+		CE2550BD28194A3000AAE44C /* AuthServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2550BC28194A3000AAE44C /* AuthServiceProvider.swift */; };
+		CE27ABBC27F1A544008CA4CB /* SecureStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27ABBB27F1A544008CA4CB /* SecureStorageTests.swift */; };
+		CE39950328076A700049A81A /* JwksUrlData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3994FB28076A700049A81A /* JwksUrlData.swift */; };
+		CE39950428076A700049A81A /* IdTokenPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3994FC28076A700049A81A /* IdTokenPayload.swift */; };
+		CE39950528076A700049A81A /* PublicKeyCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3994FD28076A700049A81A /* PublicKeyCreator.swift */; };
+		CE39950628076A700049A81A /* IdToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3994FE28076A700049A81A /* IdToken.swift */; };
+		CE39950728076A700049A81A /* IdTokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3994FF28076A700049A81A /* IdTokenParser.swift */; };
+		CE39950828076A700049A81A /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950028076A700049A81A /* ValidationManager.swift */; };
+		CE39950928076A700049A81A /* JwksUrlDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950128076A700049A81A /* JwksUrlDataManager.swift */; };
+		CE39950A28076A700049A81A /* IdTokenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950228076A700049A81A /* IdTokenHeader.swift */; };
+		CE39950F28076A790049A81A /* ITokenParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950B28076A790049A81A /* ITokenParser.swift */; };
+		CE39951028076A790049A81A /* IJwksUrlDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950C28076A790049A81A /* IJwksUrlDataManager.swift */; };
+		CE39951128076A790049A81A /* IPublicKeyCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950D28076A790049A81A /* IPublicKeyCreator.swift */; };
+		CE39951228076A790049A81A /* IValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39950E28076A790049A81A /* IValidationManager.swift */; };
+		CE39951528076A820049A81A /* OIDAuthorizationSession.h in Headers */ = {isa = PBXBuildFile; fileRef = CE39951328076A820049A81A /* OIDAuthorizationSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE39951628076A820049A81A /* Strivacity.h in Headers */ = {isa = PBXBuildFile; fileRef = CE39951428076A820049A81A /* Strivacity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE72BB2727F0F33300193785 /* ISecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72BB2227F0F33300193785 /* ISecureStorage.swift */; };
+		CE72BB2827F0F33300193785 /* IEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72BB2327F0F33300193785 /* IEndpoints.swift */; };
+		CE72BB2927F0F33300193785 /* IUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72BB2427F0F33300193785 /* IUrlFactory.swift */; };
+		CE72BB2A27F0F33300193785 /* UrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72BB2527F0F33300193785 /* UrlFactory.swift */; };
+		CE72BB2C27F0F3AF00193785 /* IAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72BB2B27F0F3AF00193785 /* IAuthClient.swift */; };
+		CE73FD0A27E36CFF008AFAD5 /* Strivacity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE73FCFF27E36CFF008AFAD5 /* Strivacity.framework */; };
+		CE73FD0F27E36CFF008AFAD5 /* StrivacityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73FD0E27E36CFF008AFAD5 /* StrivacityTests.swift */; };
+		CE7FA333281C024400F6D8C3 /* AuthClientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FA332281C024400F6D8C3 /* AuthClientData.swift */; };
+		CE7FA335281C030F00F6D8C3 /* AuthServiceProviderStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7FA334281C030F00F6D8C3 /* AuthServiceProviderStubs.swift */; };
+		CE85F26D281D9FB1007B98EC /* AuthServiceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85F26C281D9FB1007B98EC /* AuthServiceProviderTests.swift */; };
+		CE89FA0B281C36440062352B /* IAuthStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA0A281C36440062352B /* IAuthStateProvider.swift */; };
+		CE89FA0D281C38F00062352B /* AuthStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA0C281C38F00062352B /* AuthStateProvider.swift */; };
+		CE89FA0F281C48C40062352B /* AuthStateProviderStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA0E281C48C40062352B /* AuthStateProviderStubs.swift */; };
+		CE89FA11281C4D620062352B /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA10281C4D620062352B /* CommonConstants.swift */; };
+		CE89FA13281C4E580062352B /* UrlSessionManagerStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA12281C4E580062352B /* UrlSessionManagerStubs.swift */; };
+		CE89FA15281C73BE0062352B /* AuthStateProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE89FA14281C73BE0062352B /* AuthStateProviderTests.swift */; };
+		CE8DE79D27E36E280031895A /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DE79727E36E280031895A /* Endpoints.swift */; };
+		CE8DE79E27E36E280031895A /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DE79827E36E280031895A /* SecureStorage.swift */; };
+		CE8DE79F27E36E280031895A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DE79927E36E280031895A /* Config.swift */; };
+		CE8DE7A127E36E280031895A /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8DE79B27E36E280031895A /* AuthClient.swift */; };
+		CEA0DCDD2815E81800175E49 /* AuthClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA0DCDC2815E81800175E49 /* AuthClientTests.swift */; };
+		CEA1CE8F280E90B600565F22 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CE8C280E90B600565F22 /* BiometricManager.swift */; };
+		CEA1CE90280E90B600565F22 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CE8D280E90B600565F22 /* APIError.swift */; };
+		CEA1CE91280E90B600565F22 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CE8E280E90B600565F22 /* AuthProvider.swift */; };
+		CEA1CE93280E90BD00565F22 /* IProviderCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1CE92280E90BD00565F22 /* IProviderCallback.swift */; };
+		CEA7783227E74EA00059806E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA7783127E74EA00059806E /* Constants.swift */; };
+		CEA8411628153C730033D4A1 /* BiometricManagerContextStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8411528153C730033D4A1 /* BiometricManagerContextStubs.swift */; };
+		CEA8411828153FB60033D4A1 /* IBiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8411728153FB60033D4A1 /* IBiometricManager.swift */; };
+		CECAD9132814056500C4991F /* IdTokenParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD9122814056500C4991F /* IdTokenParserTests.swift */; };
+		CECAD915281428B500C4991F /* IdTokenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD914281428B500C4991F /* IdTokenData.swift */; };
+		CECAD91728142CA900C4991F /* UrlFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD91628142CA900C4991F /* UrlFactoryTests.swift */; };
+		CECAD9192814330A00C4991F /* JwksUrlDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD9182814330A00C4991F /* JwksUrlDataManagerTests.swift */; };
+		CECAD91D281452A100C4991F /* PublicKeyCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD91C281452A100C4991F /* PublicKeyCreatorTests.swift */; };
+		CECAD91F2814552F00C4991F /* ValidationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD91E2814552F00C4991F /* ValidationManagerTests.swift */; };
+		CECAD9212814828600C4991F /* BiometricManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD9202814828600C4991F /* BiometricManagerTests.swift */; };
+		CECAD9242814995100C4991F /* JwksUrlDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD9232814995100C4991F /* JwksUrlDataTests.swift */; };
+		CECAD92628149AFC00C4991F /* AuthProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD92528149AFC00C4991F /* AuthProviderTests.swift */; };
+		CED3F4B2281DA5FD000EAE8F /* IAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3F4B1281DA5FD000EAE8F /* IAuthService.swift */; };
+		CED3F4B4281DA686000EAE8F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3F4B3281DA686000EAE8F /* AuthService.swift */; };
+		CED3F4B6281DC68B000EAE8F /* AuthServiceMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3F4B5281DC68B000EAE8F /* AuthServiceMocks.swift */; };
+		CED3F4B8281DC7E1000EAE8F /* UrlSessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED3F4B7281DC7E1000EAE8F /* UrlSessionManagerTests.swift */; };
+		CEE0D16B27E62BD200E32326 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CEE0D16927E62BD200E32326 /* README.md */; };
+		CEE0D16C27E62BD200E32326 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CEE0D16A27E62BD200E32326 /* LICENSE */; };
+		CEFFF97B281143D6003DCF6D /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFF97A281143D6003DCF6D /* EndpointTests.swift */; };
+		CEFFF97D28114F2F003DCF6D /* IdTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFF97C28114F2F003DCF6D /* IdTokenTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE73FD0B27E36CFF008AFAD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE73FCF627E36CFF008AFAD5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE73FCFE27E36CFF008AFAD5;
+			remoteInfo = Strivacity;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C8B276FF0450D6F4AEDA2D4 /* Pods-Strivacity-StrivacityTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strivacity-StrivacityTests.debug.xcconfig"; path = "Target Support Files/Pods-Strivacity-StrivacityTests/Pods-Strivacity-StrivacityTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D409CB942864A9616EC4662 /* Pods-Strivacity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strivacity.debug.xcconfig"; path = "Target Support Files/Pods-Strivacity/Pods-Strivacity.debug.xcconfig"; sourceTree = "<group>"; };
+		76432A7988529717088D094F /* Pods-Strivacity-StrivacityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strivacity-StrivacityTests.release.xcconfig"; path = "Target Support Files/Pods-Strivacity-StrivacityTests/Pods-Strivacity-StrivacityTests.release.xcconfig"; sourceTree = "<group>"; };
+		CE1059E5281049B80018B96B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CE2550B62819174C00AAE44C /* IUrlSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUrlSessionManager.swift; sourceTree = "<group>"; };
+		CE2550B82819178900AAE44C /* UrlSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionManager.swift; sourceTree = "<group>"; };
+		CE2550BA281941DA00AAE44C /* IAuthServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthServiceProvider.swift; sourceTree = "<group>"; };
+		CE2550BC28194A3000AAE44C /* AuthServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProvider.swift; sourceTree = "<group>"; };
+		CE27ABBB27F1A544008CA4CB /* SecureStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageTests.swift; sourceTree = "<group>"; };
+		CE3994FB28076A700049A81A /* JwksUrlData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JwksUrlData.swift; sourceTree = "<group>"; };
+		CE3994FC28076A700049A81A /* IdTokenPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdTokenPayload.swift; sourceTree = "<group>"; };
+		CE3994FD28076A700049A81A /* PublicKeyCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKeyCreator.swift; sourceTree = "<group>"; };
+		CE3994FE28076A700049A81A /* IdToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdToken.swift; sourceTree = "<group>"; };
+		CE3994FF28076A700049A81A /* IdTokenParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdTokenParser.swift; sourceTree = "<group>"; };
+		CE39950028076A700049A81A /* ValidationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		CE39950128076A700049A81A /* JwksUrlDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JwksUrlDataManager.swift; sourceTree = "<group>"; };
+		CE39950228076A700049A81A /* IdTokenHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdTokenHeader.swift; sourceTree = "<group>"; };
+		CE39950B28076A790049A81A /* ITokenParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITokenParser.swift; sourceTree = "<group>"; };
+		CE39950C28076A790049A81A /* IJwksUrlDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJwksUrlDataManager.swift; sourceTree = "<group>"; };
+		CE39950D28076A790049A81A /* IPublicKeyCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPublicKeyCreator.swift; sourceTree = "<group>"; };
+		CE39950E28076A790049A81A /* IValidationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IValidationManager.swift; sourceTree = "<group>"; };
+		CE39951328076A820049A81A /* OIDAuthorizationSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OIDAuthorizationSession.h; sourceTree = "<group>"; };
+		CE39951428076A820049A81A /* Strivacity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strivacity.h; sourceTree = "<group>"; };
+		CE72BB2227F0F33300193785 /* ISecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISecureStorage.swift; sourceTree = "<group>"; };
+		CE72BB2327F0F33300193785 /* IEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IEndpoints.swift; sourceTree = "<group>"; };
+		CE72BB2427F0F33300193785 /* IUrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IUrlFactory.swift; sourceTree = "<group>"; };
+		CE72BB2527F0F33300193785 /* UrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlFactory.swift; sourceTree = "<group>"; };
+		CE72BB2B27F0F3AF00193785 /* IAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthClient.swift; sourceTree = "<group>"; };
+		CE73FCFF27E36CFF008AFAD5 /* Strivacity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Strivacity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE73FD0927E36CFF008AFAD5 /* StrivacityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrivacityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE73FD0E27E36CFF008AFAD5 /* StrivacityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrivacityTests.swift; sourceTree = "<group>"; };
+		CE7FA332281C024400F6D8C3 /* AuthClientData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientData.swift; sourceTree = "<group>"; };
+		CE7FA334281C030F00F6D8C3 /* AuthServiceProviderStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProviderStubs.swift; sourceTree = "<group>"; };
+		CE85F26C281D9FB1007B98EC /* AuthServiceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProviderTests.swift; sourceTree = "<group>"; };
+		CE89FA0A281C36440062352B /* IAuthStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthStateProvider.swift; sourceTree = "<group>"; };
+		CE89FA0C281C38F00062352B /* AuthStateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateProvider.swift; sourceTree = "<group>"; };
+		CE89FA0E281C48C40062352B /* AuthStateProviderStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateProviderStubs.swift; sourceTree = "<group>"; };
+		CE89FA10281C4D620062352B /* CommonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
+		CE89FA12281C4E580062352B /* UrlSessionManagerStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionManagerStubs.swift; sourceTree = "<group>"; };
+		CE89FA14281C73BE0062352B /* AuthStateProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStateProviderTests.swift; sourceTree = "<group>"; };
+		CE8DE79727E36E280031895A /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		CE8DE79827E36E280031895A /* SecureStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		CE8DE79927E36E280031895A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CE8DE79B27E36E280031895A /* AuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		CEA0DCDC2815E81800175E49 /* AuthClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientTests.swift; sourceTree = "<group>"; };
+		CEA1CE8C280E90B600565F22 /* BiometricManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
+		CEA1CE8D280E90B600565F22 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		CEA1CE8E280E90B600565F22 /* AuthProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		CEA1CE92280E90BD00565F22 /* IProviderCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IProviderCallback.swift; sourceTree = "<group>"; };
+		CEA7783127E74EA00059806E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CEA8411528153C730033D4A1 /* BiometricManagerContextStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManagerContextStubs.swift; sourceTree = "<group>"; };
+		CEA8411728153FB60033D4A1 /* IBiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBiometricManager.swift; sourceTree = "<group>"; };
+		CECAD9122814056500C4991F /* IdTokenParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTokenParserTests.swift; sourceTree = "<group>"; };
+		CECAD914281428B500C4991F /* IdTokenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTokenData.swift; sourceTree = "<group>"; };
+		CECAD91628142CA900C4991F /* UrlFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlFactoryTests.swift; sourceTree = "<group>"; };
+		CECAD9182814330A00C4991F /* JwksUrlDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwksUrlDataManagerTests.swift; sourceTree = "<group>"; };
+		CECAD91C281452A100C4991F /* PublicKeyCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyCreatorTests.swift; sourceTree = "<group>"; };
+		CECAD91E2814552F00C4991F /* ValidationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManagerTests.swift; sourceTree = "<group>"; };
+		CECAD9202814828600C4991F /* BiometricManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManagerTests.swift; sourceTree = "<group>"; };
+		CECAD9222814862A00C4991F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CECAD9232814995100C4991F /* JwksUrlDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwksUrlDataTests.swift; sourceTree = "<group>"; };
+		CECAD92528149AFC00C4991F /* AuthProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderTests.swift; sourceTree = "<group>"; };
+		CED3F4B1281DA5FD000EAE8F /* IAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAuthService.swift; sourceTree = "<group>"; };
+		CED3F4B3281DA686000EAE8F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CED3F4B5281DC68B000EAE8F /* AuthServiceMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceMocks.swift; sourceTree = "<group>"; };
+		CED3F4B7281DC7E1000EAE8F /* UrlSessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionManagerTests.swift; sourceTree = "<group>"; };
+		CEE0D16927E62BD200E32326 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CEE0D16A27E62BD200E32326 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CEFFF97A281143D6003DCF6D /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		CEFFF97C28114F2F003DCF6D /* IdTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdTokenTests.swift; sourceTree = "<group>"; };
+		D126B61C9E79012F950B9F46 /* Pods_Strivacity_StrivacityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strivacity_StrivacityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A0B9F85D6D4348CAFF197D /* Pods-Strivacity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strivacity.release.xcconfig"; path = "Target Support Files/Pods-Strivacity/Pods-Strivacity.release.xcconfig"; sourceTree = "<group>"; };
+		F3E5AF3DF5C26D832C5173AA /* Pods_Strivacity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strivacity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE73FCFC27E36CFF008AFAD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE88C7B2DF9A31FC9C29F41 /* Pods_Strivacity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE73FD0627E36CFF008AFAD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE73FD0A27E36CFF008AFAD5 /* Strivacity.framework in Frameworks */,
+				66422B8DDF3DB17F9E6508A5 /* Pods_Strivacity_StrivacityTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8678108155F32F8BF5B8D1DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3E5AF3DF5C26D832C5173AA /* Pods_Strivacity.framework */,
+				D126B61C9E79012F950B9F46 /* Pods_Strivacity_StrivacityTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87A3F9BB164AC66930BDB8E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D409CB942864A9616EC4662 /* Pods-Strivacity.debug.xcconfig */,
+				E4A0B9F85D6D4348CAFF197D /* Pods-Strivacity.release.xcconfig */,
+				2C8B276FF0450D6F4AEDA2D4 /* Pods-Strivacity-StrivacityTests.debug.xcconfig */,
+				76432A7988529717088D094F /* Pods-Strivacity-StrivacityTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE1059E4281049A50018B96B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE1059E5281049B80018B96B /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CE72BB2D27F105E100193785 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CE92280E90BD00565F22 /* IProviderCallback.swift */,
+				CE39950C28076A790049A81A /* IJwksUrlDataManager.swift */,
+				CE39950D28076A790049A81A /* IPublicKeyCreator.swift */,
+				CE39950B28076A790049A81A /* ITokenParser.swift */,
+				CE39950E28076A790049A81A /* IValidationManager.swift */,
+				CE72BB2B27F0F3AF00193785 /* IAuthClient.swift */,
+				CE72BB2327F0F33300193785 /* IEndpoints.swift */,
+				CE72BB2227F0F33300193785 /* ISecureStorage.swift */,
+				CE72BB2427F0F33300193785 /* IUrlFactory.swift */,
+				CEA8411728153FB60033D4A1 /* IBiometricManager.swift */,
+				CE2550B62819174C00AAE44C /* IUrlSessionManager.swift */,
+				CE2550BA281941DA00AAE44C /* IAuthServiceProvider.swift */,
+				CE89FA0A281C36440062352B /* IAuthStateProvider.swift */,
+				CED3F4B1281DA5FD000EAE8F /* IAuthService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE72BB2E27F1060B00193785 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				CEA1CE8D280E90B600565F22 /* APIError.swift */,
+				CEA1CE8E280E90B600565F22 /* AuthProvider.swift */,
+				CEA1CE8C280E90B600565F22 /* BiometricManager.swift */,
+				CE3994FE28076A700049A81A /* IdToken.swift */,
+				CE39950228076A700049A81A /* IdTokenHeader.swift */,
+				CE3994FF28076A700049A81A /* IdTokenParser.swift */,
+				CE3994FC28076A700049A81A /* IdTokenPayload.swift */,
+				CE3994FB28076A700049A81A /* JwksUrlData.swift */,
+				CE39950128076A700049A81A /* JwksUrlDataManager.swift */,
+				CE3994FD28076A700049A81A /* PublicKeyCreator.swift */,
+				CE39950028076A700049A81A /* ValidationManager.swift */,
+				CE72BB2527F0F33300193785 /* UrlFactory.swift */,
+				CE8DE79B27E36E280031895A /* AuthClient.swift */,
+				CE8DE79727E36E280031895A /* Endpoints.swift */,
+				CE8DE79827E36E280031895A /* SecureStorage.swift */,
+				CE2550B82819178900AAE44C /* UrlSessionManager.swift */,
+				CE2550BC28194A3000AAE44C /* AuthServiceProvider.swift */,
+				CE89FA0C281C38F00062352B /* AuthStateProvider.swift */,
+				CED3F4B3281DA686000EAE8F /* AuthService.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		CE73FCF527E36CFF008AFAD5 = {
+			isa = PBXGroup;
+			children = (
+				CEE0D16A27E62BD200E32326 /* LICENSE */,
+				CEE0D16927E62BD200E32326 /* README.md */,
+				CE73FD0127E36CFF008AFAD5 /* Source */,
+				CE73FD0D27E36CFF008AFAD5 /* StrivacityTests */,
+				CE73FD0027E36CFF008AFAD5 /* Products */,
+				87A3F9BB164AC66930BDB8E3 /* Pods */,
+				8678108155F32F8BF5B8D1DC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE73FD0027E36CFF008AFAD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE73FCFF27E36CFF008AFAD5 /* Strivacity.framework */,
+				CE73FD0927E36CFF008AFAD5 /* StrivacityTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE73FD0127E36CFF008AFAD5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CE1059E4281049A50018B96B /* Extensions */,
+				CE39951328076A820049A81A /* OIDAuthorizationSession.h */,
+				CE39951428076A820049A81A /* Strivacity.h */,
+				CE72BB2E27F1060B00193785 /* Implementation */,
+				CE72BB2D27F105E100193785 /* Protocols */,
+				CE8DE79927E36E280031895A /* Config.swift */,
+				CEA7783127E74EA00059806E /* Constants.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		CE73FD0D27E36CFF008AFAD5 /* StrivacityTests */ = {
+			isa = PBXGroup;
+			children = (
+				CECAD9222814862A00C4991F /* Info.plist */,
+				CE73FD0E27E36CFF008AFAD5 /* StrivacityTests.swift */,
+				CE27ABBB27F1A544008CA4CB /* SecureStorageTests.swift */,
+				CEFFF97A281143D6003DCF6D /* EndpointTests.swift */,
+				CEFFF97C28114F2F003DCF6D /* IdTokenTests.swift */,
+				CECAD9122814056500C4991F /* IdTokenParserTests.swift */,
+				CECAD914281428B500C4991F /* IdTokenData.swift */,
+				CECAD91628142CA900C4991F /* UrlFactoryTests.swift */,
+				CECAD9182814330A00C4991F /* JwksUrlDataManagerTests.swift */,
+				CECAD91C281452A100C4991F /* PublicKeyCreatorTests.swift */,
+				CECAD91E2814552F00C4991F /* ValidationManagerTests.swift */,
+				CECAD9202814828600C4991F /* BiometricManagerTests.swift */,
+				CECAD9232814995100C4991F /* JwksUrlDataTests.swift */,
+				CECAD92528149AFC00C4991F /* AuthProviderTests.swift */,
+				CEA8411528153C730033D4A1 /* BiometricManagerContextStubs.swift */,
+				CEA0DCDC2815E81800175E49 /* AuthClientTests.swift */,
+				CE7FA332281C024400F6D8C3 /* AuthClientData.swift */,
+				CE7FA334281C030F00F6D8C3 /* AuthServiceProviderStubs.swift */,
+				CE89FA0E281C48C40062352B /* AuthStateProviderStubs.swift */,
+				CE89FA10281C4D620062352B /* CommonConstants.swift */,
+				CE89FA12281C4E580062352B /* UrlSessionManagerStubs.swift */,
+				CE89FA14281C73BE0062352B /* AuthStateProviderTests.swift */,
+				CE85F26C281D9FB1007B98EC /* AuthServiceProviderTests.swift */,
+				CED3F4B5281DC68B000EAE8F /* AuthServiceMocks.swift */,
+				CED3F4B7281DC7E1000EAE8F /* UrlSessionManagerTests.swift */,
+			);
+			path = StrivacityTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CE73FCFA27E36CFF008AFAD5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE39951628076A820049A81A /* Strivacity.h in Headers */,
+				CE39951528076A820049A81A /* OIDAuthorizationSession.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CE73FCFE27E36CFF008AFAD5 /* Strivacity */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE73FD1327E36CFF008AFAD5 /* Build configuration list for PBXNativeTarget "Strivacity" */;
+			buildPhases = (
+				885729689FAFDEC16104008E /* [CP] Check Pods Manifest.lock */,
+				CE73FCFA27E36CFF008AFAD5 /* Headers */,
+				CE73FCFB27E36CFF008AFAD5 /* Sources */,
+				CE73FCFC27E36CFF008AFAD5 /* Frameworks */,
+				CE73FCFD27E36CFF008AFAD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Strivacity;
+			productName = Strivacity;
+			productReference = CE73FCFF27E36CFF008AFAD5 /* Strivacity.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CE73FD0827E36CFF008AFAD5 /* StrivacityTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE73FD1627E36CFF008AFAD5 /* Build configuration list for PBXNativeTarget "StrivacityTests" */;
+			buildPhases = (
+				0C024753E10AC584C5260870 /* [CP] Check Pods Manifest.lock */,
+				CE73FD0527E36CFF008AFAD5 /* Sources */,
+				CE73FD0627E36CFF008AFAD5 /* Frameworks */,
+				CE73FD0727E36CFF008AFAD5 /* Resources */,
+				DD3FABB2A29379DEA4509845 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE73FD0C27E36CFF008AFAD5 /* PBXTargetDependency */,
+			);
+			name = StrivacityTests;
+			productName = StrivacityTests;
+			productReference = CE73FD0927E36CFF008AFAD5 /* StrivacityTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE73FCF627E36CFF008AFAD5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					CE73FCFE27E36CFF008AFAD5 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					CE73FD0827E36CFF008AFAD5 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1330;
+					};
+				};
+			};
+			buildConfigurationList = CE73FCF927E36CFF008AFAD5 /* Build configuration list for PBXProject "Strivacity" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE73FCF527E36CFF008AFAD5;
+			productRefGroup = CE73FD0027E36CFF008AFAD5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE73FCFE27E36CFF008AFAD5 /* Strivacity */,
+				CE73FD0827E36CFF008AFAD5 /* StrivacityTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE73FCFD27E36CFF008AFAD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE0D16C27E62BD200E32326 /* LICENSE in Resources */,
+				CEE0D16B27E62BD200E32326 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE73FD0727E36CFF008AFAD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C024753E10AC584C5260870 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Strivacity-StrivacityTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		885729689FAFDEC16104008E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Strivacity-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD3FABB2A29379DEA4509845 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strivacity-StrivacityTests/Pods-Strivacity-StrivacityTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Strivacity-StrivacityTests/Pods-Strivacity-StrivacityTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Strivacity-StrivacityTests/Pods-Strivacity-StrivacityTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE73FCFB27E36CFF008AFAD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE036332281541AB00DFD402 /* IBiometricManager.swift in Sources */,
+				CE8DE79E27E36E280031895A /* SecureStorage.swift in Sources */,
+				CE2550BD28194A3000AAE44C /* AuthServiceProvider.swift in Sources */,
+				CED3F4B4281DA686000EAE8F /* AuthService.swift in Sources */,
+				CE89FA0D281C38F00062352B /* AuthStateProvider.swift in Sources */,
+				CE39950928076A700049A81A /* JwksUrlDataManager.swift in Sources */,
+				CE72BB2A27F0F33300193785 /* UrlFactory.swift in Sources */,
+				CE39950728076A700049A81A /* IdTokenParser.swift in Sources */,
+				CE8DE79F27E36E280031895A /* Config.swift in Sources */,
+				CEA1CE91280E90B600565F22 /* AuthProvider.swift in Sources */,
+				CE39951128076A790049A81A /* IPublicKeyCreator.swift in Sources */,
+				CEA1CE8F280E90B600565F22 /* BiometricManager.swift in Sources */,
+				CE72BB2927F0F33300193785 /* IUrlFactory.swift in Sources */,
+				CE89FA0B281C36440062352B /* IAuthStateProvider.swift in Sources */,
+				CE2550BB281941DA00AAE44C /* IAuthServiceProvider.swift in Sources */,
+				CE39950628076A700049A81A /* IdToken.swift in Sources */,
+				CED3F4B2281DA5FD000EAE8F /* IAuthService.swift in Sources */,
+				CE1059E6281049B80018B96B /* StringExtension.swift in Sources */,
+				CE39951228076A790049A81A /* IValidationManager.swift in Sources */,
+				CE39950F28076A790049A81A /* ITokenParser.swift in Sources */,
+				CE2550B92819178900AAE44C /* UrlSessionManager.swift in Sources */,
+				CE72BB2827F0F33300193785 /* IEndpoints.swift in Sources */,
+				CE8DE79D27E36E280031895A /* Endpoints.swift in Sources */,
+				CE72BB2727F0F33300193785 /* ISecureStorage.swift in Sources */,
+				CE39950428076A700049A81A /* IdTokenPayload.swift in Sources */,
+				CE39950A28076A700049A81A /* IdTokenHeader.swift in Sources */,
+				CE39950828076A700049A81A /* ValidationManager.swift in Sources */,
+				CE39950328076A700049A81A /* JwksUrlData.swift in Sources */,
+				CE8DE7A127E36E280031895A /* AuthClient.swift in Sources */,
+				CE39951028076A790049A81A /* IJwksUrlDataManager.swift in Sources */,
+				CE2550B72819174C00AAE44C /* IUrlSessionManager.swift in Sources */,
+				CEA1CE93280E90BD00565F22 /* IProviderCallback.swift in Sources */,
+				CE72BB2C27F0F3AF00193785 /* IAuthClient.swift in Sources */,
+				CEA7783227E74EA00059806E /* Constants.swift in Sources */,
+				CE39950528076A700049A81A /* PublicKeyCreator.swift in Sources */,
+				CEA1CE90280E90B600565F22 /* APIError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE73FD0527E36CFF008AFAD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE73FD0F27E36CFF008AFAD5 /* StrivacityTests.swift in Sources */,
+				CEFFF97B281143D6003DCF6D /* EndpointTests.swift in Sources */,
+				CECAD9132814056500C4991F /* IdTokenParserTests.swift in Sources */,
+				CE85F26D281D9FB1007B98EC /* AuthServiceProviderTests.swift in Sources */,
+				CEA8411828153FB60033D4A1 /* IBiometricManager.swift in Sources */,
+				CE89FA15281C73BE0062352B /* AuthStateProviderTests.swift in Sources */,
+				CE89FA0F281C48C40062352B /* AuthStateProviderStubs.swift in Sources */,
+				CECAD92628149AFC00C4991F /* AuthProviderTests.swift in Sources */,
+				CECAD91F2814552F00C4991F /* ValidationManagerTests.swift in Sources */,
+				CECAD9242814995100C4991F /* JwksUrlDataTests.swift in Sources */,
+				CECAD915281428B500C4991F /* IdTokenData.swift in Sources */,
+				CECAD9212814828600C4991F /* BiometricManagerTests.swift in Sources */,
+				CE27ABBC27F1A544008CA4CB /* SecureStorageTests.swift in Sources */,
+				CED3F4B8281DC7E1000EAE8F /* UrlSessionManagerTests.swift in Sources */,
+				CEA0DCDD2815E81800175E49 /* AuthClientTests.swift in Sources */,
+				CECAD91728142CA900C4991F /* UrlFactoryTests.swift in Sources */,
+				CE7FA333281C024400F6D8C3 /* AuthClientData.swift in Sources */,
+				CEFFF97D28114F2F003DCF6D /* IdTokenTests.swift in Sources */,
+				CED3F4B6281DC68B000EAE8F /* AuthServiceMocks.swift in Sources */,
+				CE7FA335281C030F00F6D8C3 /* AuthServiceProviderStubs.swift in Sources */,
+				CEA8411628153C730033D4A1 /* BiometricManagerContextStubs.swift in Sources */,
+				CE89FA13281C4E580062352B /* UrlSessionManagerStubs.swift in Sources */,
+				CECAD9192814330A00C4991F /* JwksUrlDataManagerTests.swift in Sources */,
+				CE89FA11281C4D620062352B /* CommonConstants.swift in Sources */,
+				CECAD91D281452A100C4991F /* PublicKeyCreatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE73FD0C27E36CFF008AFAD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE73FCFE27E36CFF008AFAD5 /* Strivacity */;
+			targetProxy = CE73FD0B27E36CFF008AFAD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CE73FD1127E36CFF008AFAD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE73FD1227E36CFF008AFAD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CE73FD1427E36CFF008AFAD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D409CB942864A9616EC4662 /* Pods-Strivacity.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XNSHF6G8CD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strivacity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE73FD1527E36CFF008AFAD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4A0B9F85D6D4348CAFF197D /* Pods-Strivacity.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XNSHF6G8CD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strivacity;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE73FD1727E36CFF008AFAD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C8B276FF0450D6F4AEDA2D4 /* Pods-Strivacity-StrivacityTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XNSHF6G8CD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StrivacityTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StrivacityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE73FD1827E36CFF008AFAD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76432A7988529717088D094F /* Pods-Strivacity-StrivacityTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XNSHF6G8CD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StrivacityTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StrivacityTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE73FCF927E36CFF008AFAD5 /* Build configuration list for PBXProject "Strivacity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE73FD1127E36CFF008AFAD5 /* Debug */,
+				CE73FD1227E36CFF008AFAD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE73FD1327E36CFF008AFAD5 /* Build configuration list for PBXNativeTarget "Strivacity" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE73FD1427E36CFF008AFAD5 /* Debug */,
+				CE73FD1527E36CFF008AFAD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE73FD1627E36CFF008AFAD5 /* Build configuration list for PBXNativeTarget "StrivacityTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE73FD1727E36CFF008AFAD5 /* Debug */,
+				CE73FD1827E36CFF008AFAD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE73FCF627E36CFF008AFAD5 /* Project object */;
+}

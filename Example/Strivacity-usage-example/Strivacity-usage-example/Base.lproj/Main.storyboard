@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Strivacity_usage_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="290-V0-lbr">
+                                <rect key="frame" x="35" y="218.33333333333334" width="305" height="39.000000000000028"/>
+                                <color key="backgroundColor" name="Strivacity_orange"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Hybrid">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hybridAuthButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuX-yF-qxQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buy-M8-KNi">
+                                <rect key="frame" x="35" y="272.33333333333331" width="305" height="39.333333333333314"/>
+                                <color key="backgroundColor" name="Strivacity_orange"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Request Token">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="requestAccessTokenButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYR-e4-nMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9C2-sI-4ni">
+                                <rect key="frame" x="35" y="326.66666666666669" width="305" height="39"/>
+                                <color key="backgroundColor" name="Strivacity_orange"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Request Token ID">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="requestIdTokenButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j3g-45-sy9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbK-Tv-enH">
+                                <rect key="frame" x="35" y="380.66666666666669" width="305" height="39.333333333333314"/>
+                                <color key="backgroundColor" name="Strivacity_orange"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sax-T4-qNr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalCompressionResistancePriority="751" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ctr-0p-Oug">
+                                <rect key="frame" x="67.666666666666686" y="111" width="240" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="JE5-ft-C4s"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-T9-pzR">
+                                <rect key="frame" x="35" y="164" width="305" height="39.333333333333343"/>
+                                <color key="backgroundColor" name="Strivacity_orange"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="EHz-Sm-elf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="W1D-fU-sle"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="AuthFlow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="authButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AJe-wL-FVj"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbg-EU-8Hj">
+                                <rect key="frame" x="35" y="430" width="305" height="338"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auth Code:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbg-aK-3en">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="gXx-lT-9Lc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" name="Strivacity_orange"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ntp-A0-jjZ">
+                                        <rect key="frame" x="0.0" y="24.999999999999993" width="305" height="84.333333333333314"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="mhm-aL-DsB"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID Token:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maQ-a1-RKd">
+                                        <rect key="frame" x="0.0" y="114.33333333333337" width="305" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" name="Strivacity_orange"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mdq-2Z-9be">
+                                        <rect key="frame" x="0.0" y="139.33333333333337" width="305" height="84.333333333333314"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="YJt-71-96k"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Access Token:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEz-mI-jaj">
+                                        <rect key="frame" x="0.0" y="228.66666666666663" width="305" height="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" name="Strivacity_orange"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-3a-ws2">
+                                        <rect key="frame" x="0.0" y="253.66666666666666" width="305" height="84.333333333333343"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="DC5-3b-x7c"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="maQ-a1-RKd" secondAttribute="trailing" id="I6L-ro-xk3"/>
+                                    <constraint firstItem="fGp-3a-ws2" firstAttribute="height" secondItem="mdq-2Z-9be" secondAttribute="height" id="J1C-uc-viS"/>
+                                    <constraint firstItem="Nbg-aK-3en" firstAttribute="top" secondItem="Jbg-EU-8Hj" secondAttribute="top" id="LyU-Rf-8cI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nbg-aK-3en" secondAttribute="trailing" id="Mbl-0a-6Xd"/>
+                                    <constraint firstItem="fGp-3a-ws2" firstAttribute="height" secondItem="ntp-A0-jjZ" secondAttribute="height" id="VH1-CV-gkm"/>
+                                    <constraint firstItem="maQ-a1-RKd" firstAttribute="height" secondItem="Nbg-aK-3en" secondAttribute="height" id="cPQ-iw-Oem"/>
+                                    <constraint firstItem="ntp-A0-jjZ" firstAttribute="leading" secondItem="Jbg-EU-8Hj" secondAttribute="leading" id="fHb-K4-fhZ"/>
+                                    <constraint firstItem="hEz-mI-jaj" firstAttribute="height" secondItem="Nbg-aK-3en" secondAttribute="height" id="se7-0W-3UT"/>
+                                    <constraint firstAttribute="trailing" secondItem="ntp-A0-jjZ" secondAttribute="trailing" id="tun-NA-mUs"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" verticalCompressionResistancePriority="751" image="Trademark" translatesAutoresizingMaskIntoConstraints="NO" id="60W-ft-QJh">
+                                <rect key="frame" x="137.66666666666666" y="59" width="99.666666666666657" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="qV0-39-Eix"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="uGz-SV-8kd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="Strivacity_background"/>
+                        <constraints>
+                            <constraint firstItem="EbK-Tv-enH" firstAttribute="height" secondItem="tYV-T9-pzR" secondAttribute="height" id="0hL-fi-0de"/>
+                            <constraint firstItem="tYV-T9-pzR" firstAttribute="width" secondItem="9C2-sI-4ni" secondAttribute="width" id="5Rb-7K-93q"/>
+                            <constraint firstItem="EbK-Tv-enH" firstAttribute="width" secondItem="9C2-sI-4ni" secondAttribute="width" id="6Yb-VY-Vvz"/>
+                            <constraint firstItem="ctr-0p-Oug" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7RZ-7O-p6I"/>
+                            <constraint firstItem="ctr-0p-Oug" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8V8-wv-eSj"/>
+                            <constraint firstItem="ctr-0p-Oug" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.64" id="A8i-yQ-V4G"/>
+                            <constraint firstItem="Jbg-EU-8Hj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BZX-JE-9pU"/>
+                            <constraint firstItem="9C2-sI-4ni" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IRq-Lu-MXd"/>
+                            <constraint firstItem="buy-M8-KNi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JJ6-cm-Qx0"/>
+                            <constraint firstItem="290-V0-lbr" firstAttribute="width" secondItem="9C2-sI-4ni" secondAttribute="width" id="Jco-ax-Kn0"/>
+                            <constraint firstItem="Jbg-EU-8Hj" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.813" id="Jsj-5A-ekR"/>
+                            <constraint firstItem="Jbg-EU-8Hj" firstAttribute="top" secondItem="EbK-Tv-enH" secondAttribute="bottom" constant="10" id="MgU-wV-oB2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ctr-0p-Oug" secondAttribute="trailing" constant="20" id="P0G-Zs-cZO"/>
+                            <constraint firstItem="ctr-0p-Oug" firstAttribute="top" secondItem="60W-ft-QJh" secondAttribute="bottom" constant="15" id="PKd-e1-6rr"/>
+                            <constraint firstItem="60W-ft-QJh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="R6r-bb-ZdP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jbg-EU-8Hj" secondAttribute="bottom" constant="10" id="Rm8-O6-jWE"/>
+                            <constraint firstItem="buy-M8-KNi" firstAttribute="top" secondItem="290-V0-lbr" secondAttribute="bottom" constant="15" id="Vkf-Gd-Ufb"/>
+                            <constraint firstItem="60W-ft-QJh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="VtX-at-mL7"/>
+                            <constraint firstItem="9C2-sI-4ni" firstAttribute="height" secondItem="tYV-T9-pzR" secondAttribute="height" id="W0T-E6-b0i"/>
+                            <constraint firstItem="290-V0-lbr" firstAttribute="height" secondItem="tYV-T9-pzR" secondAttribute="height" id="WnQ-bJ-R0H"/>
+                            <constraint firstItem="EbK-Tv-enH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bgY-bL-AJJ"/>
+                            <constraint firstItem="60W-ft-QJh" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.266" id="cM1-bY-Fof"/>
+                            <constraint firstItem="tYV-T9-pzR" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.813" id="eLO-WZ-crm"/>
+                            <constraint firstItem="290-V0-lbr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ec2-1l-Gj6"/>
+                            <constraint firstItem="290-V0-lbr" firstAttribute="top" secondItem="tYV-T9-pzR" secondAttribute="bottom" constant="15" id="ep1-Ya-q7m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="60W-ft-QJh" secondAttribute="trailing" constant="20" id="g7F-vl-qNm"/>
+                            <constraint firstItem="9C2-sI-4ni" firstAttribute="top" secondItem="buy-M8-KNi" secondAttribute="bottom" constant="15" id="loj-4G-f45"/>
+                            <constraint firstItem="buy-M8-KNi" firstAttribute="height" secondItem="tYV-T9-pzR" secondAttribute="height" id="mTu-aO-jxg"/>
+                            <constraint firstItem="buy-M8-KNi" firstAttribute="width" secondItem="9C2-sI-4ni" secondAttribute="width" id="pw2-xq-YY4"/>
+                            <constraint firstItem="tYV-T9-pzR" firstAttribute="top" secondItem="ctr-0p-Oug" secondAttribute="bottom" constant="20" id="qKw-Bk-Pve"/>
+                            <constraint firstItem="60W-ft-QJh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sSe-EF-DqS"/>
+                            <constraint firstItem="EbK-Tv-enH" firstAttribute="top" secondItem="9C2-sI-4ni" secondAttribute="bottom" constant="15" id="vKp-cr-4Mk"/>
+                            <constraint firstItem="tYV-T9-pzR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="w7D-Tz-ptb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accessTokenLabel" destination="hEz-mI-jaj" id="1mW-gV-oYv"/>
+                        <outlet property="accessTokenTextView" destination="fGp-3a-ws2" id="IZz-dz-aAS"/>
+                        <outlet property="authButton" destination="tYV-T9-pzR" id="rgd-OD-jIS"/>
+                        <outlet property="authCodeLabel" destination="Nbg-aK-3en" id="Ttf-aa-DW6"/>
+                        <outlet property="authCodeTextView" destination="ntp-A0-jjZ" id="fr1-RY-mwM"/>
+                        <outlet property="hybridAuthButton" destination="290-V0-lbr" id="NpS-se-ox9"/>
+                        <outlet property="idTokenLabel" destination="maQ-a1-RKd" id="vWD-b4-URB"/>
+                        <outlet property="idTokenTextView" destination="mdq-2Z-9be" id="BFV-Y6-2V8"/>
+                        <outlet property="logoutButton" destination="EbK-Tv-enH" id="xLU-Dn-f7Y"/>
+                        <outlet property="requestAccessTokenButton" destination="buy-M8-KNi" id="TTO-kG-vLa"/>
+                        <outlet property="requestIdTokenButton" destination="9C2-sI-4ni" id="dPZ-OW-3Sq"/>
+                        <outlet property="stackView" destination="Jbg-EU-8Hj" id="9PG-uQ-sOq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="83.497536945812811"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="276" height="28.333333969116211"/>
+        <image name="Trademark" width="114" height="37"/>
+        <namedColor name="Strivacity_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Strivacity_orange">
+            <color red="0.92941176470588238" green="0.49803921568627452" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
