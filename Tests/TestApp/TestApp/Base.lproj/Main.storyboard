@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdn-gz-gI9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="TTX-HZ-kne">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-Bf-z9o" userLabel="AccessToken">
+                                                <rect key="frame" x="3.6666666666666572" y="0.0" width="386" height="96"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="AccessToken"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHB-e4-2vM" userLabel="Error">
+                                                <rect key="frame" x="177.66666666666666" y="105" width="37.666666666666657" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Error"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYI-Gt-EGZ" userLabel="Claims">
+                                                <rect key="frame" x="3.6666666666666572" y="164" width="386" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Claims"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OM-V1-EbJ" userLabel="IsAuthenticated">
+                                                <rect key="frame" x="171.66666666666666" y="223" width="50" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="IsAuthenticated"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-gt-EKd">
+                                                <rect key="frame" x="116.33333333333333" y="282" width="160.33333333333337" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="StartFlowSuccess"/>
+                                                <connections>
+                                                    <action selector="startFlowSuccess" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="PL5-5A-ex3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K48-QR-Wku" userLabel="StartFlowWrongDomain">
+                                                <rect key="frame" x="94.333333333333329" y="325.33333333333331" width="204.66666666666669" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="StartFlowWrongDomain"/>
+                                                <connections>
+                                                    <action selector="startFlowWrongDomain" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ukK-eF-pK5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1La-VA-YNw">
+                                                <rect key="frame" x="89.333333333333329" y="368.66666666666669" width="214.33333333333337" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GetAccessTokenSuccess"/>
+                                                <connections>
+                                                    <action selector="getAccessTokenSuccess" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dDA-xj-4hE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPO-rg-rxc">
+                                                <rect key="frame" x="48.333333333333343" y="412" width="296.66666666666663" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GetAccessTokenUsingRefreshToken"/>
+                                                <connections>
+                                                    <action selector="getAccessTokenUsingRefreshToken" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="8Bo-jU-hLf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FED-Iv-NmP">
+                                                <rect key="frame" x="73" y="455.33333333333337" width="247" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GetAccessTokenReturnsError"/>
+                                                <connections>
+                                                    <action selector="getAccessTokenReturnsError" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="lZn-1e-Irb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKb-ej-D4i">
+                                                <rect key="frame" x="61" y="498.66666666666657" width="271" height="34.333333333333314"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GetLastRetrievedClaimsSuccess"/>
+                                                <connections>
+                                                    <action selector="getLastRetrievedClaimsSuccess" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="5sI-OV-BBF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wif-EQ-YL7">
+                                                <rect key="frame" x="78.333333333333329" y="542" width="236.33333333333337" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="GetLastRetrievedClaimsNull"/>
+                                                <connections>
+                                                    <action selector="getLastRetrievedClaimsNull" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="aVM-3h-1Yp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Bz-eY-jqA">
+                                                <rect key="frame" x="126.00000000000001" y="585.33333333333337" width="141.33333333333337" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="LogoutSuccess"/>
+                                                <connections>
+                                                    <action selector="logoutSuccess" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="n7y-aO-Kb0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sn5-6b-mu7">
+                                                <rect key="frame" x="70.666666666666671" y="628.66666666666663" width="251.66666666666663" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="LogoutNotAuthenticatedState"/>
+                                                <connections>
+                                                    <action selector="logoutNotAuthenticatedState" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Cqi-0F-bUs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS3-fz-QPF">
+                                                <rect key="frame" x="16" y="672" width="361" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="CheckAuthenticatedWithAuthenticatedState"/>
+                                                <connections>
+                                                    <action selector="checkAuthenticatedWithAuthenticatedState" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="HoW-Dk-7sv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q3-fl-rDh">
+                                                <rect key="frame" x="33.666666666666657" y="715.33333333333337" width="325.66666666666674" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="CheckAuthenticatedUsingRefreshToken"/>
+                                                <connections>
+                                                    <action selector="checkAuthenticatedUsingRefreshToken" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="cao-fd-spu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iek-a2-ZVQ">
+                                                <rect key="frame" x="3.6666666666666572" y="758.66666666666663" width="386" height="34.333333333333371"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="CheckAuthenticatedWithoutAuthenticatedState"/>
+                                                <connections>
+                                                    <action selector="checkAuthenticatedWithoutAuthenticatedState" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Ov2-eZ-PRH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VHB-e4-2vM" firstAttribute="width" secondItem="TTX-HZ-kne" secondAttribute="width" multiplier="0.0958439" id="1Hd-i9-cb5"/>
+                                            <constraint firstItem="PYI-Gt-EGZ" firstAttribute="width" secondItem="TTX-HZ-kne" secondAttribute="width" multiplier="0.982188" id="4Jx-Ig-kel"/>
+                                            <constraint firstItem="SXr-Bf-z9o" firstAttribute="width" secondItem="TTX-HZ-kne" secondAttribute="width" multiplier="0.982188" id="Zw3-Th-kfZ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="top" secondItem="kdn-gz-gI9" secondAttribute="top" id="1wW-DK-WfW"/>
+                                    <constraint firstItem="mEe-Bo-Myb" firstAttribute="bottom" secondItem="TTX-HZ-kne" secondAttribute="bottom" id="4XW-zY-Yav"/>
+                                    <constraint firstItem="mEe-Bo-Myb" firstAttribute="trailing" secondItem="TTX-HZ-kne" secondAttribute="trailing" id="9vT-1S-xvn"/>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="width" secondItem="kdn-gz-gI9" secondAttribute="width" id="FKN-px-0Rs"/>
+                                    <constraint firstAttribute="trailing" secondItem="TTX-HZ-kne" secondAttribute="trailing" id="Nhw-wZ-hGZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="TTX-HZ-kne" secondAttribute="bottom" id="S5l-sr-OG5"/>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="top" secondItem="kdn-gz-gI9" secondAttribute="top" id="b3e-Kg-BOm"/>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="leading" secondItem="kdn-gz-gI9" secondAttribute="leading" id="tvO-g5-Kos"/>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="height" secondItem="kdn-gz-gI9" secondAttribute="height" id="uem-yc-1F9"/>
+                                    <constraint firstItem="TTX-HZ-kne" firstAttribute="leading" secondItem="kdn-gz-gI9" secondAttribute="leading" id="v2i-DV-LLT"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="bFy-gf-H0f"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mEe-Bo-Myb"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kdn-gz-gI9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Pz-T7-K0W"/>
+                            <constraint firstItem="kdn-gz-gI9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4jq-fu-r5K"/>
+                            <constraint firstItem="kdn-gz-gI9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KNW-Fj-OQ6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="kdn-gz-gI9" secondAttribute="bottom" constant="-34" id="fAK-dg-9Ij"/>
+                            <constraint firstItem="kdn-gz-gI9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="z7g-Zm-BnL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accessTokenL" destination="SXr-Bf-z9o" id="QxS-8m-G0o"/>
+                        <outlet property="claimsL" destination="PYI-Gt-EGZ" id="wY2-oR-Dew"/>
+                        <outlet property="errorL" destination="VHB-e4-2vM" id="CKy-sK-kwN"/>
+                        <outlet property="isAuthenticatedL" destination="0OM-V1-EbJ" id="X9S-dM-YMo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

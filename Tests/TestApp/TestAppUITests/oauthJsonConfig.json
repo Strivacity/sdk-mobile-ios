@@ -1,0 +1,19 @@
+{
+    "interactiveLogin": false,
+    "httpServer": "NettyWrapper",
+    "tokenCallbacks": [
+        {
+            "issuerId": "expiry",
+            "tokenExpiry": 1,
+            "requestMappings": [
+                {
+                    "requestParam": "client_id",
+                    "claims": {
+                        "sub": "testsub",
+                        "aud": "clientid"
+                    }
+                }
+            ]
+        }
+    ]
+}
