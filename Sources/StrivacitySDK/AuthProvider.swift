@@ -13,6 +13,8 @@ public class AuthProvider {
     
     private var scopes: Set<String>?
     private var loginHint: String?
+    private var acrValues: String?
+    private var uiLocales: String?
     private var prompts: Set<String>?
     private var postLogoutUri: URL?
     
@@ -75,6 +77,34 @@ public class AuthProvider {
     /// - Returns: ``AuthProvider`` instance
     public func withLoginHint(_ loginHint: String) -> AuthProvider {
         self.loginHint = loginHint
+        return self
+    }
+    
+    /// With this method, you can define the acr values.
+    ///
+    /// - SeeAlso:
+    ///   [OpenID Connect Authorization Endpoint section](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+    ///
+    /// - Parameters:
+    ///     - acrValues:  Requested authentication context class reference values
+    ///
+    /// - Returns: ``AuthProvider`` instance
+    public func withAcrValues(_ acrValues: String) -> AuthProvider {
+        self.acrValues = acrValues
+        return self
+    }
+    
+    /// With this method, you can define the ui locales.
+    ///
+    /// - SeeAlso:
+    ///   [OpenID Connect Authorization Endpoint section](https://openid.net/specs/openid-connect-core-1_0.html#AuthorizationEndpoint)
+    ///
+    /// - Parameters:
+    ///     - uiLocales:  End-user's preferred languages
+    ///
+    /// - Returns: ``AuthProvider`` instance
+    public func withUiLocales(_ uiLocales: String) -> AuthProvider {
+        self.uiLocales = uiLocales
         return self
     }
     
@@ -147,6 +177,12 @@ public class AuthProvider {
             var additionalParams: [String: String] = [:]
             if let loginHint = self.loginHint {
                 additionalParams["login_hint"] = loginHint
+            }
+            if let acrValues = self.acrValues {
+                additionalParams["acr_values"] = acrValues
+            }
+            if let uiLocales = self.uiLocales {
+                additionalParams["ui_locales"] = uiLocales
             }
             if let prompts = self.prompts {
                 additionalParams["prompt"] = prompts.joined(separator: " ")
@@ -372,3 +408,4 @@ extension CustomError: LocalizedError {
         }
     }
 }
+
