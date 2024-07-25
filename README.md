@@ -1,8 +1,16 @@
-# Strivacity SDK for iOS
+![Strivacity iOS SDK](https://static.strivacity.com/images/ios-native-sdk.png)
 
-This SDK allows you to integrate Strivacity's sign-in journeys
-into your brand's iOS mobile applications.
-The SDK uses OAuth 2.0 PKCE flow to communicate with Strivacity.
+[View in Documentation](https://docs.strivacity.com/docs/ios-mobile-sdk)
+
+See our [Developer Portal](https://www.strivacity.com/learn-support/developer-hub) to get started with developing for the Strivacity product.
+
+# Overview
+
+This SDK allows you to integrate Strivacity’s policy-driven journeys into your brand’s iOS mobile application. It implements Strivacity's no-code components via iOS's [ASWebAuthenticationSession](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) . 
+
+This SDK uses <https://appauth.io>, which follows the best practices from [RFC 8252 - OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252),  including using in-app browser views like ASWebAuthenticationSession. Embedded user-agents, known as web-views, are not supported due to usability and security reasons documented in [Section 8.12 of RFC 8252](https://tools.ietf.org/html/rfc8252#section-8.12).
+
+The SDK uses the [PKCE extension to OAuth](https://tools.ietf.org/html/rfc7636), which secures authorization codes in public clients when custom URI scheme redirects are used.
 
 ## How to use
 
@@ -13,6 +21,7 @@ If you are using [Swift Package Manager](https://www.swift.org/package-manager/)
 ```swift
 .package(url: "https://github.com/Strivacity/sdk-mobile-ios.git", from: "<version>")
 ```
+
 where `<version>` is the SDK version you want to use.
 
 If you are using an XCode Project use the `File / Add Packages...` option enter the following url: `https://github.com/Strivacity/sdk-mobile-ios.git` and select the `sdk-mobile-ios` package with the version you want to use
@@ -32,7 +41,7 @@ REDIRECT_URL =
 POST_LOGOUT_REDIRECT_URL = 
 ```
 
-Note: urls won't work with '//' charachters, so refer to https://stackoverflow.com/questions/21317844/how-do-i-configure-full-urls-in-xcconfig-files ,
+Note: urls won't work with '//' charachters, so refer to <https://stackoverflow.com/questions/21317844/how-do-i-configure-full-urls-in-xcconfig-files> ,  
 you have to put a '$()' between '//' (e.g.: '/$()/').
 
 Before you start the app, don't forget to set the config file in the app settings: Project -> Info -> Configurations.
@@ -41,13 +50,14 @@ Before you start the app, don't forget to set the config file in the app setting
 
 Note: The internal implementation of the Strivacity SDK for iOS relies on the open source [AppAuth Library](https://github.com/openid/AppAuth-iOS).
 
-Strivacity SDK for iOS provides the possibility to build an application which can communicate with Strivacity using OAuth 2.0 PKCE flow.
-You can define your own storage logic using the [Storage](https://github.com/Strivacity/sdk-mobile-ios/blob/main/Sources/StrivacitySDK/Storage.swift) interface.
+Strivacity SDK for iOS provides the possibility to build an application which can communicate with Strivacity using OAuth 2.0 PKCE flow.  
+You can define your own storage logic using the [Storage](https://github.com/Strivacity/sdk-mobile-ios/blob/main/Sources/StrivacitySDK/Storage.swift) interface.  
 Refresh token can be used to refresh the auth state instead of running authentication again.
 
 ## Initialize AuthProvider
 
 First, you must call the AuthProvider create method to create an instance:
+
 ```swift
 let provider = AuthProvider.create(
     issuer,                                      // specifies authentication server domain
@@ -60,6 +70,7 @@ let provider = AuthProvider.create(
 ### Define more configurations
 
 After you created the provider instance you can add more configs to fit your flow.
+
 ```swift
 provider
     .withScopes()                       // for defining scopes (openid, offline is included by default)
@@ -72,7 +83,7 @@ provider
 
 ## Starting the flow
 
-After a successful set up, you can use the startFlow method to initiate the login process.
+After a successful set up, you can use the startFlow method to initiate the login process.  
 You have to provide the viewController and define the success and onError callbacks which is called from this method.
 
 ```swift
@@ -85,7 +96,7 @@ provider.startFlow(viewController: myViewController) { accessToken, claims in
 
 ## Get access token
 
-To obtain the access token you can use getAccessToken method to retrieve it from the auth state
+To obtain the access token you can use getAccessToken method to retrieve it from the auth state  
 or the method tries to refresh it using refresh token. Access token can be nil.
 
 ```swift
@@ -98,8 +109,8 @@ provider.getAccessToken { accessToken in
 
 ## Get claims
 
-You have the possibility to get the claims from the last id token response (if it exists).
-For this, call the getLastRetrievedClaims method which returns an '[AnyHashable: Any]?' object that contains the claims.
+You have the possibility to get the claims from the last id token response (if it exists).  
+For this, call the getLastRetrievedClaims method which returns an '[AnyHashable: Any]?' object that contains the claims.  
 If there wasn't any claim, nil returns.
 
 ```swift
@@ -108,8 +119,8 @@ let claims = provider.getLastRetrievedClaims()
 
 ## Perform logout
 
-After the logout, callback function is called both on success or failure logout. If there was no
-auth state then it is removed from the storage. If an error happens, then the error will return.
+After the logout, callback function is called both on success or failure logout. If there was no  
+auth state then it is removed from the storage. If an error happens, then the error will return.  
 You have to provide the viewController and the callback.
 
 ```swift
@@ -130,7 +141,7 @@ provider.checkAuthenticated { isAuthenticated in
 
 ## Author
 
-Strivacity <opensource@strivacity.com>
+Strivacity [\[opensource@strivacity.com\](mailto:opensource@strivacity.com)](mailto:[opensource@strivacity.com](mailto:opensource@strivacity.com))
 
 ## License
 
@@ -138,5 +149,5 @@ Strivacity is available under the Apache License, Version 2.0. See the [LICENSE]
 
 ## Vulnerability Reporting
 
-The [Guidelines for responsible disclosure](https://www.strivacity.com/report-a-security-issue) details the procedure for disclosing security issues.
+The [Guidelines for responsible disclosure](https://www.strivacity.com/report-a-security-issue) details the procedure for disclosing security issues.  
 Please do not report security vulnerabilities on the public issue tracker.
