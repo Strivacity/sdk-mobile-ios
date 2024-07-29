@@ -1,19 +1,4 @@
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://static.strivacity.com/images/ios-native-sdk.png",
-        "",
-        ""
-      ],
-      "align": "center",
-      "sizing": "1922px"
-    }
-  ]
-}
-[/block]
-
+![Strivacity iOS SDK](https://static.strivacity.com/images/ios-native-sdk.png)
 
 [View on Github](https://github.com/Strivacity/sdk-mobile-ios)
 
