@@ -1,77 +1,88 @@
-![Strivacity iOS SDK](https://static.strivacity.com/images/ios-native-sdk.png)
+[block:image]
+{
+  "images": [
+    {
+      "image": [
+        "https://static.strivacity.com/images/android-native-sdk-banner.png",
+        "",
+        ""
+      ],
+      "align": "center",
+      "sizing": "1932px"
+    }
+  ]
+}
+[/block]
 
-[View in Documentation](https://docs.strivacity.com/docs/ios-mobile-sdk)
+
+[![Maven Central](https://img.shields.io/maven-central/v/com.strivacity.android/sdk)](https://search.maven.org/artifact/com.strivacity.android/sdk) \| [View on Github](https://github.com/Strivacity/sdk-mobile-android)
 
 See our [Developer Portal](https://www.strivacity.com/learn-support/developer-hub) to get started with developing for the Strivacity product.
 
 # Overview
 
-This SDK allows you to integrate Strivacity’s policy-driven journeys into your brand’s iOS mobile application. It implements Strivacity's no-code components via iOS's [ASWebAuthenticationSession](https://developer.apple.com/documentation/authenticationservices/aswebauthenticationsession) . 
+This SDK allows you to integrate Strivacity’s policy-driven journeys into your brand’s Android mobile application. It implements Strivacity's no-code components via [Android Custom Tabs](https://developer.chrome.com/docs/android/custom-tabs).
 
-This SDK uses <https://appauth.io>, which follows the best practices from [RFC 8252 - OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252),  including using in-app browser views like ASWebAuthenticationSession. Embedded user-agents, known as web-views, are not supported due to usability and security reasons documented in [Section 8.12 of RFC 8252](https://tools.ietf.org/html/rfc8252#section-8.12).
+This SDK uses <https://appauth.io>, which follows the best practices from [RFC 8252 - OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252),  including using in-app browser views like Android Custom Tabs. Embedded user-agents, known as web-views, are not supported due to usability and security reasons documented in [Section 8.12 of RFC 8252](https://tools.ietf.org/html/rfc8252#section-8.12).
 
 The SDK uses the [PKCE extension to OAuth](https://tools.ietf.org/html/rfc7636), which secures authorization codes in public clients when custom URI scheme redirects are used.
 
-## How to use
+## Download
 
-To use the Strivacity iOS SDK:
+Strivacity SDK for Android is available on [MavenCentral](https://search.maven.org/search?q=g:com.strivacity.android%20AND%20a:sdk).
 
-If you are using [Swift Package Manager](https://www.swift.org/package-manager/) extend your `Package.swift` file with the following dependency
-
-```swift
-.package(url: "https://github.com/Strivacity/sdk-mobile-ios.git", from: "<version>")
+```groovy
+implementation 'com.strivacity.android:sdk:<version>'
 ```
-
-where `<version>` is the SDK version you want to use.
-
-If you are using an XCode Project use the `File / Add Packages...` option enter the following url: `https://github.com/Strivacity/sdk-mobile-ios.git` and select the `sdk-mobile-ios` package with the version you want to use
 
 ## Demo App
 
-A demo app is part of this repository.
-
-### Before using demo app
-
-Create a Config.xcconfig file into DemoApp folder and copy the following:
-
-```text
-ISSUER_URL = 
-CLIENT_ID = 
-REDIRECT_URL = 
-POST_LOGOUT_REDIRECT_URL = 
-```
-
-Note: urls won't work with '//' charachters, so refer to <https://stackoverflow.com/questions/21317844/how-do-i-configure-full-urls-in-xcconfig-files> ,  
-you have to put a '$()' between '//' (e.g.: '/$()/').
-
-Before you start the app, don't forget to set the config file in the app settings: Project -> Info -> Configurations.
+A demo app is part of this repository. To run the demo app, first, you need to configure  
+credentials.properties file which can be found under app folder (after you build app's gradle).
 
 ## Overview
 
-Note: The internal implementation of the Strivacity SDK for iOS relies on the open source [AppAuth Library](https://github.com/openid/AppAuth-iOS).
+Note: The internal implementation of the Strivacity SDK for Android relies on the open source [AppAuth Library](https://github.com/openid/AppAuth-Android).
 
-Strivacity SDK for iOS provides the possibility to build an application which can communicate with Strivacity using OAuth 2.0 PKCE flow.  
-You can define your own storage logic using the [Storage](https://github.com/Strivacity/sdk-mobile-ios/blob/main/Sources/StrivacitySDK/Storage.swift) interface.  
+Strivacity SDK for Android provides the possibility to build an application which can communicate with Strivacity using OAuth 2.0 PKCE flow.  
+You can define your own storage logic using the [Storage](https://github.com/Strivacity/sdk-mobile-android/blob/main/sdk-lib/src/main/java/com/strivacity/android/sdk/Storage.java) interface.  
 Refresh token can be used to refresh the auth state instead of running authentication again.
+
+## Before you use the SDK
+
+You have to define your applicationId in the gradle file of your app:
+
+```groovy
+android {
+  defaultConfig {
+    manifestPlaceholders = [
+      'appAuthRedirectScheme': '<your applicationId>'
+    ]
+  }
+}
+```
+
+[Read more about applicationId](https://developer.android.com/build/configure-app-module).
 
 ## Initialize AuthProvider
 
 First, you must call the AuthProvider create method to create an instance:
 
-```swift
-let provider = AuthProvider.create(
+```text
+AuthProvider provider = AuthProvider.create(
+    context,
     issuer,                                      // specifies authentication server domain
-    redirectUri,                                 // specifies the redirect uri
     clientId,                                    // specifies OAuth client ID
+    redirectUri,                                 // specifies the redirect uri
     storage                                      // optional, you can provide the storage logic you implemented using Storage interface, or use the default unsecure storage logic
-)
+);
 ```
 
 ### Define more configurations
 
 After you created the provider instance you can add more configs to fit your flow.
 
-```swift
+```text
 provider
     .withScopes()                       // for defining scopes (openid, offline is included by default)
     .withLoginHint()                    // for defining login hint
@@ -84,64 +95,88 @@ provider
 ## Starting the flow
 
 After a successful set up, you can use the startFlow method to initiate the login process.  
-You have to provide the viewController and define the success and onError callbacks which is called from this method.
+You have to provide the context, and define a callback which is called from this method.
 
-```swift
-provider.startFlow(viewController: myViewController) { accessToken, claims in
-    // add success logic here
-} onError: { error in
-    // handle error
+```text
+FlowResponseCallback callback = new FlowResponseCallback() {
+    @Override
+    public void success(
+        @Nullable String accessToken,
+        @Nullable Map<String, Object> claims
+    ) {
+        // add success logic here
+    }
+    
+    @Override
+    public void failure(@NonNull AuthFlowException exception) {
+        // handle error
+    }
 }
+provider.startFlow(context, callback);
 ```
 
 ## Get access token
 
 To obtain the access token you can use getAccessToken method to retrieve it from the auth state  
-or the method tries to refresh it using refresh token. Access token can be nil.
+or the method tries to refresh it using refresh token. Claims also return besides the access token.  
+You can take the same callback here like in startFlow.
 
-```swift
-provider.getAccessToken { accessToken in
-    // add success logic here
-} onError: { error in
-    // handle error
+```text
+FlowResponseCallback callback = new FlowResponseCallback() {
+    @Override
+    public void success(
+        @Nullable String accessToken,
+        @Nullable Map<String, Object> claims
+    ) {
+        // add success logic here
+    }
+    
+    @Override
+    public void failure(@NonNull AuthFlowException exception) {
+        // handle error
+    }
 }
+provider.getAccessToken(callback);
 ```
 
 ## Get claims
 
 You have the possibility to get the claims from the last id token response (if it exists).  
-For this, call the getLastRetrievedClaims method which returns an '[AnyHashable: Any]?' object that contains the claims.  
-If there wasn't any claim, nil returns.
+For this, call the getLastRetrievedClaims method which returns a Map object that contains the claims.  
+If there wasn't any claim, null returns.
 
-```swift
-let claims = provider.getLastRetrievedClaims()
+```text
+Map<String, Object> claims = provider.getLastRetrievedClaims();
 ```
 
 ## Perform logout
 
 After the logout, callback function is called both on success or failure logout. If there was no  
-auth state then it is removed from the storage. If an error happens, then the error will return.  
-You have to provide the viewController and the callback.
+auth state then it is removed from the storage.
 
-```swift
-provider.logout(viewController: myViewController) { error in
-    // add success logic and handle error if presents
+```text
+EndSessionCallback callback = new EndSessionCallback() {
+    @Override
+    public void finish() {
+        // add some logic here
+    }
 }
+provider.logout(context, callback);
 ```
 
 ## Checking authState is authenticated
 
 There is a method where you can check if the auth state stored in the storage is authenticated or not.
 
-```swift
-provider.checkAuthenticated { isAuthenticated in
+```text
+provider.checkAuthenticated(isAuthenticated -> {
     // add some logic here
-}
+});
 ```
 
 ## Author
 
-Strivacity [\[opensource@strivacity.com\](mailto:opensource@strivacity.com)](mailto:[opensource@strivacity.com](mailto:opensource@strivacity.com))
+Strivacity: [opensource@strivacity.com](mailto:opensource@strivacity.com)
 
 ## License
 
