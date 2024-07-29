@@ -1,6 +1,6 @@
 ![Strivacity iOS SDK](https://static.strivacity.com/images/ios-native-sdk.png)
 
-[View on Github](https://github.com/Strivacity/sdk-mobile-ios)
+[View in Docs](https://docs.strivacity.com/docs/ios-mobile-sdk)
 
 See our [Developer Portal](https://www.strivacity.com/learn-support/developer-hub) to get started with developing for the Strivacity product.
 
