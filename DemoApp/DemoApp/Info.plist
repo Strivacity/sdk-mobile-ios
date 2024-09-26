@@ -10,5 +10,7 @@
 	<string>$(REDIRECT_URL)</string>
 	<key>POST_LOGOUT_REDIRECT_URL</key>
 	<string>$(POST_LOGOUT_REDIRECT_URL)</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app uses Face ID to authenticate the user for secure access.</string>
 </dict>
 </plist>

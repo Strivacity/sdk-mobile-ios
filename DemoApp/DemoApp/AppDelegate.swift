@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             issuer: URL(string: issuer)!,
             redirectUri: URL(string: redirect)!,
             clientId: clientId,
-            storage: nil
+            storage: CustomStorageImpl()
         )
         .withScopes(["profile", "email"])
         .withPostLogoutUri(URL(string: postLogout)!)

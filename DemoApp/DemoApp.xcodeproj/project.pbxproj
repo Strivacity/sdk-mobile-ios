@@ -15,6 +15,7 @@
 		1C49917C2A4EF9DB00D293C6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49917B2A4EF9DB00D293C6 /* Controller.swift */; };
 		1C49917E2A4EF9F800D293C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49917D2A4EF9F800D293C6 /* AppDelegate.swift */; };
 		1C4991812A4EFAB000D293C6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1C4991802A4EFAB000D293C6 /* Config.xcconfig */; };
+		1C8452C72C9D97C30041D040 /* CustomStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8452C62C9D97C30041D040 /* CustomStorageImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		1C49917D2A4EF9F800D293C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C49917F2A4EFA6500D293C6 /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 		1C4991802A4EFAB000D293C6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		1C8452C62C9D97C30041D040 /* CustomStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStorageImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				1C49917D2A4EF9F800D293C6 /* AppDelegate.swift */,
 				1C49917F2A4EFA6500D293C6 /* DemoApp.entitlements */,
 				1C4991802A4EFAB000D293C6 /* Config.xcconfig */,
+				1C8452C62C9D97C30041D040 /* CustomStorageImpl.swift */,
 			);
 			path = DemoApp;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				1C49917E2A4EF9F800D293C6 /* AppDelegate.swift in Sources */,
 				1C49917C2A4EF9DB00D293C6 /* Controller.swift in Sources */,
 				1C49916A2A4EF83900D293C6 /* ContentView.swift in Sources */,
+				1C8452C72C9D97C30041D040 /* CustomStorageImpl.swift in Sources */,
 				1C4991682A4EF83900D293C6 /* DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
