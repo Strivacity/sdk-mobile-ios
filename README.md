@@ -87,7 +87,7 @@ After a successful set up, you can use the startFlow method to initiate the logi
 You have to provide the viewController and define the success and onError callbacks which is called from this method.
 
 ```swift
-provider.startFlow(viewController: myViewController) { accessToken, claims in
+provider.startFlow(viewController: myViewController, additionalParameters: additionalParams) { accessToken, claims in
     // add success logic here
 } onError: { error in
     // handle error
@@ -100,7 +100,7 @@ To obtain the access token you can use getAccessToken method to retrieve it from
 or the method tries to refresh it using refresh token. Access token can be nil.
 
 ```swift
-provider.getAccessToken { accessToken in
+provider.getAccessToken(additionalParameters: additionalParams) { accessToken in
     // add success logic here
 } onError: { error in
     // handle error
@@ -115,6 +115,15 @@ If there wasn't any claim, nil returns.
 
 ```swift
 let claims = provider.getLastRetrievedClaims()
+```
+
+## Get last token additional parameters
+
+If you are using token refreshing to renew your access token, you have the possibility to create a token refresh hook in the Admin Console
+and pass additional information from the hook back to the mobile next to the new tokens. To do this, just use the following code.
+
+```swift
+let additionalParams = provider.getLastTokenResponseAdditionalParameters()
 ```
 
 ## Perform logout
@@ -134,10 +143,17 @@ provider.logout(viewController: myViewController) { error in
 There is a method where you can check if the auth state stored in the storage is authenticated or not.
 
 ```swift
-provider.checkAuthenticated { isAuthenticated in
+provider.checkAuthenticated(additionalParameters: additionalParams) { isAuthenticated in
     // add some logic here
 }
 ```
+
+## Test
+
+To run unit tests, simply click the play button in the test files using the integrated test runner.
+
+For UI tests, open the TestApp folder as a project using the TestApp.xcodeproj file. First, run the Docker image from the TestAppUITests folder by executing `docker-compose up -d`. 
+Then, run the UI tests by clicking the play button in the corresponding test file.
 
 ## Author
 
