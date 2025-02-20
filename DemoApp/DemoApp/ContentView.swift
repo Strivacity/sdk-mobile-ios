@@ -57,12 +57,21 @@ struct MainView: View {
                     }
                 }
                 Divider()
+                ForEach(getAdditionalParams().keys.map { String(describing: $0) }, id: \.self) { additionalParam in
+                    HStack {
+                        Text(additionalParam)
+                        Spacer()
+                        Text(getAdditionalParams()[additionalParam] ?? "")
+                    }
+                }
+                Divider()
                 Text(controller.errorText ?? "")
             }
             Spacer()
             VStack(spacing: 10) {
-                Button("Get Access Token") {
-                    controller.getAccessToken()
+                Button("Get Access Token and additional params") {
+                    controller.getAccessToken(additionalParams: ["customKey": "customValue"])
+                    controller.getLastAdditionalParams()
                 }
                 Button("Get claims") {
                     controller.getClaims()
@@ -80,6 +89,10 @@ struct MainView: View {
     
     private func getClaimValue(key: AnyHashable) -> String {
         String(describing: controller.claims?[key] ?? "")
+    }
+    
+    private func getAdditionalParams() -> [String: String] {
+        controller.additionalParams ?? [:]
     }
     
     private func getViewController() -> UIViewController {

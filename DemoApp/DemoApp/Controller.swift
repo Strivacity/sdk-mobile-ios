@@ -6,6 +6,7 @@ class UIController: ObservableObject {
     @Published var errorText: String?
     @Published var accessToken: String?
     @Published var claims: [AnyHashable: Any]?
+    @Published var additionalParams: [String: String]?
     @Published var isAuthenticated = false
     
     let appDelegate: AppDelegate
@@ -15,7 +16,8 @@ class UIController: ObservableObject {
     }
     
     func startFlow(viewController: UIViewController) {
-        appDelegate.provider.startFlow(viewController: viewController) { accessToken, claims in
+        let additionalParams = ["customKey": "customValue"]
+        appDelegate.provider.startFlow(viewController: viewController, refreshTokenAdditionalParameters: additionalParams) { accessToken, claims in
             print("success")
             self.isAuthenticated = true
             self.errorText = nil
@@ -29,13 +31,18 @@ class UIController: ObservableObject {
             self.claims = nil
         }
     }
-    
-    func getAccessToken() {
-        appDelegate.provider.getAccessToken { accessToken in
+
+    func getAccessToken(additionalParams: [String: String] = [:]) {
+        appDelegate.provider.getAccessToken(refreshTokenAdditionalParameters: additionalParams) { accessToken in
             self.accessToken = accessToken
-        } onError: { error in
+        }
+        onError: { error in
             self.errorText = error.localizedDescription
         }
+    }
+    
+    func getLastAdditionalParams() {
+        self.additionalParams = appDelegate.provider.getLastTokenResponseAdditionalParameters()
     }
     
     func getClaims() {
@@ -50,7 +57,8 @@ class UIController: ObservableObject {
     }
     
     func checkAuthenticated() {
-        appDelegate.provider.checkAuthenticated { isAuthenticated in
+        let additionalParams = ["customKey": "customValue"]
+        appDelegate.provider.checkAuthenticated(refreshTokenAdditionalParameters: additionalParams) { isAuthenticated in
             self.isAuthenticated = isAuthenticated
         }
     }
