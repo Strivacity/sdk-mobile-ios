@@ -1,10 +1,9 @@
-import SwiftUI
 import StrivacitySDK
+import SwiftUI
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
     let provider: AuthProvider
-    
+
     override init() {
         guard
             let infoDictionary = Bundle.main.infoDictionary,
@@ -15,11 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let postLogout = infoDictionary["POST_LOGOUT_REDIRECT_URL"] as? String,
             !postLogout.isEmpty,
             let clientId = infoDictionary["CLIENT_ID"] as? String,
-            !clientId.isEmpty
-        else {
+            !clientId.isEmpty else {
             fatalError("There were missing configuration attributes")
         }
-        
+
         provider = AuthProvider.create(
             issuer: URL(string: issuer)!,
             redirectUri: URL(string: redirect)!,
@@ -29,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         .withScopes(["profile", "email"])
         .withPostLogoutUri(URL(string: postLogout)!)
     }
-    
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         provider.resumeExternalUserAgentFlow(url: url)
     }
 }
