@@ -1,52 +1,51 @@
-import UIKit
-import StrivacitySDK
 import AppAuth
+import StrivacitySDK
+import UIKit
 
 class ViewController: UIViewController {
-    
     private let DOMAIN_URL = URL(string: "http://localhost:8080/default")!
     private let REDIRECT_URL = URL(string: "com.strivacity.sdk.testapp://localhost:8080/default/oauth2redirect")!
-    
+
     private let EXPIRY_DOMAIN_URL = URL(string: "http://localhost:8080/expiry")!
     private let EXPIRY_REDIRECT_URL = URL(string: "com.strivacity.sdk.testapp://localhost:8080/expiry/oauth2redirect")!
-    
+
     private let NO_ACCESS_TOKEN = "No access token"
     private let NO_CLAIMS = "No claims"
     private let NO_ERROR = "No error"
-    
-    @IBOutlet weak var accessTokenL: UILabel!
-    @IBOutlet weak var claimsL: UILabel!
-    @IBOutlet weak var errorL: UILabel!
-    @IBOutlet weak var isAuthenticatedL: UILabel!
-    
+
+    @IBOutlet var accessTokenL: UILabel!
+    @IBOutlet var claimsL: UILabel!
+    @IBOutlet var errorL: UILabel!
+    @IBOutlet var isAuthenticatedL: UILabel!
+
     private let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBAction func startFlowSuccess() {
         createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
-        .startFlow(viewController: self) { accessToken, claims in
-            self.accessTokenL.text = accessToken
-            self.claimsL.text = claims?.description
-            self.errorL.text = self.NO_ERROR
-        } onError: { error in
-            self.accessTokenL.text = self.NO_ACCESS_TOKEN
-            self.claimsL.text = self.NO_CLAIMS
-            self.errorL.text = error.localizedDescription
-        }
+            .startFlow(viewController: self) { accessToken, claims in
+                self.accessTokenL.text = accessToken
+                self.claimsL.text = claims?.description
+                self.errorL.text = self.NO_ERROR
+            } onError: { error in
+                self.accessTokenL.text = self.NO_ACCESS_TOKEN
+                self.claimsL.text = self.NO_CLAIMS
+                self.errorL.text = error.localizedDescription
+            }
     }
 
     @IBAction func startFlowWrongDomain() {
         createProvider(issuer: URL(string: "http://example.com")!, redirectURL: REDIRECT_URL)
-        .startFlow(viewController: self) { accessToken, claims in
-            self.accessTokenL.text = accessToken
-            self.claimsL.text = claims?.description
-            self.errorL.text = self.NO_ERROR
-        } onError: { error in
-            self.accessTokenL.text = self.NO_ACCESS_TOKEN
-            self.claimsL.text = self.NO_CLAIMS
-            self.errorL.text = error.localizedDescription
-        }
+            .startFlow(viewController: self) { accessToken, claims in
+                self.accessTokenL.text = accessToken
+                self.claimsL.text = claims?.description
+                self.errorL.text = self.NO_ERROR
+            } onError: { error in
+                self.accessTokenL.text = self.NO_ACCESS_TOKEN
+                self.claimsL.text = self.NO_CLAIMS
+                self.errorL.text = error.localizedDescription
+            }
     }
-    
+
     @IBAction func getAccessTokenSuccess() {
         let provider = createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
         provider.startFlow(viewController: self) { _, _ in
@@ -65,13 +64,13 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func getAccessTokenUsingRefreshToken() {
         let provider = createProvider(issuer: EXPIRY_DOMAIN_URL, redirectURL: EXPIRY_REDIRECT_URL)
         provider.startFlow(viewController: self) { accessToken, _ in
             // NOTE: wait until access token is expired
             Thread.sleep(forTimeInterval: 2)
-            
+
             provider.getAccessToken { refreshedAccessToken in
                 if accessToken != refreshedAccessToken {
                     self.accessTokenL.text = refreshedAccessToken
@@ -91,25 +90,25 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func getAccessTokenReturnsError() {
         createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
-        .getAccessToken { accessToken in
-            self.accessTokenL.text = accessToken
-            self.claimsL.text = self.NO_CLAIMS
-            self.errorL.text = self.NO_ERROR
-        } onError: { error in
-            self.accessTokenL.text = self.NO_ACCESS_TOKEN
-            self.claimsL.text = self.NO_CLAIMS
-            self.errorL.text = error.localizedDescription
-        }
+            .getAccessToken { accessToken in
+                self.accessTokenL.text = accessToken
+                self.claimsL.text = self.NO_CLAIMS
+                self.errorL.text = self.NO_ERROR
+            } onError: { error in
+                self.accessTokenL.text = self.NO_ACCESS_TOKEN
+                self.claimsL.text = self.NO_CLAIMS
+                self.errorL.text = error.localizedDescription
+            }
     }
-    
+
     @IBAction func getLastRetrievedClaimsSuccess() {
         let provider = createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
         provider.startFlow(viewController: self) { _, _ in
             let claimsFromMethod = provider.getLastRetrievedClaims()
-            
+
             self.accessTokenL.text = self.NO_ACCESS_TOKEN
             self.claimsL.text = claimsFromMethod?.description
             self.errorL.text = self.NO_ERROR
@@ -119,20 +118,20 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func getLastRetrievedClaimsNull() {
         let claims = createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
-        .getLastRetrievedClaims()
-        
-        self.accessTokenL.text = self.NO_ACCESS_TOKEN
+            .getLastRetrievedClaims()
+
+        accessTokenL.text = NO_ACCESS_TOKEN
         if let claims = claims {
-            self.claimsL.text = claims.description
+            claimsL.text = claims.description
         } else {
-            self.claimsL.text = self.NO_CLAIMS
+            claimsL.text = NO_CLAIMS
         }
-        self.errorL.text = self.NO_ERROR
+        errorL.text = NO_ERROR
     }
-    
+
     @IBAction func logoutSuccess() {
         let provider = createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL, postLogout: true)
         provider.startFlow(viewController: self) { _, _ in
@@ -153,22 +152,22 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func logoutNotAuthenticatedState() {
         createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL, postLogout: true)
-        .logout(viewController: self) { error in
-            if let error = error {
-                self.accessTokenL.text = self.NO_ACCESS_TOKEN
-                self.claimsL.text = self.NO_CLAIMS
-                self.errorL.text = error.localizedDescription
-            } else {
-                self.accessTokenL.text = self.NO_ACCESS_TOKEN
-                self.claimsL.text = self.NO_CLAIMS
-                self.errorL.text = self.NO_ERROR
+            .logout(viewController: self) { error in
+                if let error = error {
+                    self.accessTokenL.text = self.NO_ACCESS_TOKEN
+                    self.claimsL.text = self.NO_CLAIMS
+                    self.errorL.text = error.localizedDescription
+                } else {
+                    self.accessTokenL.text = self.NO_ACCESS_TOKEN
+                    self.claimsL.text = self.NO_CLAIMS
+                    self.errorL.text = self.NO_ERROR
+                }
             }
-        }
     }
-    
+
     @IBAction func checkAuthenticatedWithAuthenticatedState() {
         let provider = createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
         provider.startFlow(viewController: self) { _, _ in
@@ -181,13 +180,13 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func checkAuthenticatedUsingRefreshToken() {
         let provider = createProvider(issuer: EXPIRY_DOMAIN_URL, redirectURL: EXPIRY_REDIRECT_URL)
         provider.startFlow(viewController: self) { _, _ in
             // NOTE: wait until access token is expired
             Thread.sleep(forTimeInterval: 2)
-            
+
             provider.checkAuthenticated { isAuthenticated in
                 self.isAuthenticatedL.text = isAuthenticated.description
                 self.errorL.text = self.NO_ERROR
@@ -197,15 +196,15 @@ class ViewController: UIViewController {
             self.errorL.text = error.localizedDescription
         }
     }
-    
+
     @IBAction func checkAuthenticatedWithoutAuthenticatedState() {
         createProvider(issuer: DOMAIN_URL, redirectURL: REDIRECT_URL)
-        .checkAuthenticated { isAuthenticated in
-            self.isAuthenticatedL.text = isAuthenticated.description
-            self.errorL.text = self.NO_ERROR
-        }
+            .checkAuthenticated { isAuthenticated in
+                self.isAuthenticatedL.text = isAuthenticated.description
+                self.errorL.text = self.NO_ERROR
+            }
     }
-    
+
     private func createProvider(
         issuer: URL,
         redirectURL: URL,
@@ -213,34 +212,34 @@ class ViewController: UIViewController {
         clearStorage: Bool = true,
         resetLabels: Bool = true
     ) -> AuthProvider {
-        if (clearStorage) {
+        if clearStorage {
             let query = [
                 kSecAttrAccount: "com.strivacity.sdk.AuthState",
                 kSecClass: kSecClassGenericPassword,
-            ] as [CFString : Any] as CFDictionary
+            ] as [CFString: Any] as CFDictionary
             SecItemDelete(query)
         }
-        
-        if (resetLabels) {
+
+        if resetLabels {
             accessTokenL.text = ""
             claimsL.text = ""
             errorL.text = ""
             isAuthenticatedL.text = ""
         }
-        
+
         let provider = AuthProvider.create(
             issuer: issuer,
             redirectUri: redirectURL,
             clientId: "clientid",
             storage: nil
         )
-        
-        if (postLogout) {
+
+        if postLogout {
             let _ = provider.withPostLogoutUri(REDIRECT_URL)
         }
-        
+
         appDelegate.authProvider = provider
-        
+
         return provider
     }
 }

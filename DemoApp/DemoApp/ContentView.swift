@@ -1,9 +1,9 @@
-import SwiftUI
 import StrivacitySDK
+import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var controller: UIController
-    
+
     var body: some View {
         ScrollView {
             if controller.isAuthenticated {
@@ -14,24 +14,24 @@ struct ContentView: View {
         }
         .padding(5)
     }
-    
+
     init(controller: UIController) {
         self.controller = controller
-        
+
         controller.checkAuthenticated()
     }
 }
 
 struct LoginView: View {
     @ObservedObject var controller: UIController
-    
+
     var body: some View {
         Button("Login") {
             controller.startFlow(viewController: getViewController())
         }
         Text(controller.errorText ?? "")
     }
-    
+
     private func getViewController() -> UIViewController {
         let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         return scene!.keyWindow!.rootViewController!
@@ -40,7 +40,7 @@ struct LoginView: View {
 
 struct MainView: View {
     @ObservedObject var controller: UIController
-    
+
     var body: some View {
         VStack(spacing: 10) {
             VStack(alignment: .leading) {
@@ -49,7 +49,7 @@ struct MainView: View {
                     Text(controller.accessToken ?? "")
                 }
                 Divider()
-                ForEach(getClaims().keys.map { String(describing: $0) }, id:\.self) { claim in
+                ForEach(getClaims().keys.map { String(describing: $0) }, id: \.self) { claim in
                     HStack {
                         Text(claim)
                         Spacer()
@@ -82,19 +82,19 @@ struct MainView: View {
             }
         }
     }
-    
+
     private func getClaims() -> [AnyHashable: Any] {
         controller.claims ?? [:]
     }
-    
+
     private func getClaimValue(key: AnyHashable) -> String {
         String(describing: controller.claims?[key] ?? "")
     }
-    
+
     private func getAdditionalParams() -> [String: String] {
         controller.additionalParams ?? [:]
     }
-    
+
     private func getViewController() -> UIViewController {
         let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         return scene!.keyWindow!.rootViewController!

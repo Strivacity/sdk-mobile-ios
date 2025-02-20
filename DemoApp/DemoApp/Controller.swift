@@ -1,23 +1,25 @@
-import UIKit
 import StrivacitySDK
+import UIKit
 
 class UIController: ObservableObject {
-    
     @Published var errorText: String?
     @Published var accessToken: String?
     @Published var claims: [AnyHashable: Any]?
     @Published var additionalParams: [String: String]?
     @Published var isAuthenticated = false
-    
+
     let appDelegate: AppDelegate
 
     init(appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
     }
-    
+
     func startFlow(viewController: UIViewController) {
         let additionalParams = ["customKey": "customValue"]
-        appDelegate.provider.startFlow(viewController: viewController, refreshTokenAdditionalParameters: additionalParams) { accessToken, claims in
+        appDelegate.provider.startFlow(
+            viewController: viewController,
+            refreshTokenAdditionalParameters: additionalParams
+        ) { accessToken, claims in
             print("success")
             self.isAuthenticated = true
             self.errorText = nil
@@ -40,22 +42,22 @@ class UIController: ObservableObject {
             self.errorText = error.localizedDescription
         }
     }
-    
+
     func getLastAdditionalParams() {
-        self.additionalParams = appDelegate.provider.getLastTokenResponseAdditionalParameters()
+        additionalParams = appDelegate.provider.getLastTokenResponseAdditionalParameters()
     }
-    
+
     func getClaims() {
-        self.claims = appDelegate.provider.getLastRetrievedClaims()
+        claims = appDelegate.provider.getLastRetrievedClaims()
     }
-    
+
     func logout(viewController: UIViewController) {
         appDelegate.provider.logout(viewController: viewController) { error in
             self.errorText = error?.localizedDescription
             self.isAuthenticated = false
         }
     }
-    
+
     func checkAuthenticated() {
         let additionalParams = ["customKey": "customValue"]
         appDelegate.provider.checkAuthenticated(refreshTokenAdditionalParameters: additionalParams) { isAuthenticated in
