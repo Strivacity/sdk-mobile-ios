@@ -149,6 +149,7 @@ public class AuthProvider {
     ///     - onError: this is called to pass error in a failure result
     public func startFlow(
         viewController: UIViewController,
+        refreshTokenAdditionalParameters: [String: String] = [:],
         success: @escaping (String?, [AnyHashable: Any]?) -> Void,
         onError failure: @escaping (Error) -> Void
     ) {
@@ -198,7 +199,7 @@ public class AuthProvider {
             )
             
             self.log("check authenticated")
-            self.checkAuthenticated { isAuthenticated in
+            self.checkAuthenticated(refreshTokenAdditionalParameters: refreshTokenAdditionalParameters) { isAuthenticated in
                 self.log("check authenticated finished")
                 if (isAuthenticated) {
                     self.log("authenticated")
@@ -242,30 +243,33 @@ public class AuthProvider {
     /// - Parameters:
     ///     - success: this is called to pass access token in a success result
     ///     - onError: this is called to pass error in a failure result
-    public func getAccessToken(accessToken success: @escaping (String?) -> Void, onError failure: @escaping (Error) -> Void) {
+    public func getAccessToken(refreshTokenAdditionalParameters: [String: String] = [:], accessToken success: @escaping (String?) -> Void, onError failure: @escaping (Error) -> Void) {
         log("getAccessToken called")
-        if let currentState = authStateManager.getCurrentState() {
-            log("current state found")
-            currentState.performAction { accessToken, _, error in
-                self.log("performAction finished")
-                if let error = error {
-                    self.log("error came back")
-                    failure(error)
-                    return
-                }
-                guard let accessToken = accessToken else {
-                    self.log("accessToken is nil")
-                    failure(CustomError.unexpected)
-                    return
-                }
-                
-                self.log("accessToken successfully received")
-                success(accessToken)
-            }
-        } else {
+
+        guard let currentState = authStateManager.getCurrentState() else {
             log("current state not found")
             failure(CustomError.stateMissing)
+            return
         }
+
+        log("current state found")
+        
+        currentState.performAction(freshTokens: { accessToken, _, error in
+            self.log("performAction finished")
+            if let error = error {
+                self.log("error came back")
+                failure(error)
+                return
+            }
+            guard let accessToken = accessToken else {
+                self.log("accessToken is nil")
+                failure(CustomError.unexpected)
+                return
+            }
+            
+            self.log("accessToken successfully received")
+            success(accessToken)
+        }, additionalRefreshParameters: refreshTokenAdditionalParameters)
     }
     
     /// Returns claims from the last response of saved auth state.
@@ -331,7 +335,7 @@ public class AuthProvider {
     ///
     /// - Parameters:
     ///     - callback: this is called to pass if state is authenticated or not
-    public func checkAuthenticated(isAuthenticated callback: @escaping (Bool) -> Void) {
+    public func checkAuthenticated(refreshTokenAdditionalParameters: [String: String] = [:], isAuthenticated callback: @escaping (Bool) -> Void) {
         log("checkAuthenticated called")
         guard let currentState = authStateManager.getCurrentState() else {
             log("currentState is nil")
@@ -340,17 +344,28 @@ public class AuthProvider {
         }
 
         log("trying to refresh token")
-        currentState.performAction { accessToken, _, error in
-            self.log("performing action finished")
-            
-            if accessToken == nil || error != nil {
-                self.log("token not refreshed")
-                callback(false)
-            } else {
-                self.log("token refreshed")
-                callback(true)
-            }
+        currentState.performAction(freshTokens: { accessToken, _, error in
+               self.log("performing action finished")
+
+               if let accessToken = accessToken, error == nil {
+                   self.log("token refreshed")
+                   callback(true)
+               } else {
+                   self.log("token not refreshed")
+                   callback(false)
+               }
+        }, additionalRefreshParameters: refreshTokenAdditionalParameters)
+    }
+    
+    /// With this method you can get the last token response additional parameters. This can be
+    /// useful if you are using token refresh hook and you would like to pass additional information
+    /// back to your application.
+    public func getLastTokenResponseAdditionalParameters() -> [String: String] {
+        guard let currentState = authStateManager.getCurrentState() else {
+            log("currentState is nil")
+            return [:]
         }
+        return currentState.lastTokenResponse?.additionalParameters as? [String: String] ?? [:]
     }
     
     private func log(_ msg: StaticString, type logType: OSLogType = .info) {
