@@ -375,12 +375,12 @@ public class AuthProvider {
     /// With this method you can get the last token response additional parameters. This can be
     /// useful if you are using token refresh hook and you would like to pass additional information
     /// back to your application.
-    public func getLastTokenResponseAdditionalParameters() -> [String: String] {
+    public func getLastTokenResponseAdditionalParameters() -> [String: Any] {
         guard let currentState = authStateManager.getCurrentState() else {
             log("currentState is nil")
             return [:]
         }
-        return currentState.lastTokenResponse?.additionalParameters as? [String: String] ?? [:]
+        return currentState.lastTokenResponse?.additionalParameters as? [String: Any] ?? [:]
     }
 
     private func log(_ msg: StaticString, type logType: OSLogType = .info) {
