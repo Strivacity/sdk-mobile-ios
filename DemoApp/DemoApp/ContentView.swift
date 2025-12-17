@@ -131,6 +131,9 @@ struct MainView: View {
                 Button("Get claims") {
                     controller.getClaims()
                 }
+                Button("Revoke") {
+                    controller.revoke()
+                }
                 Button("Logout") {
                     controller.logout(viewController: getViewController())
                 }
