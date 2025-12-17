@@ -49,7 +49,10 @@ struct MainView: View {
                     Text(controller.accessToken ?? "")
                 }
                 Divider()
-                ForEach(getClaims().keys.map { String(describing: $0) }, id: \.self) { claim in
+                ForEach(
+                    getClaims().keys.map { String(describing: $0) },
+                    id: \.self
+                ) { claim in
                     HStack {
                         Text(claim)
                         Spacer()
@@ -57,11 +60,14 @@ struct MainView: View {
                     }
                 }
                 Divider()
-                ForEach(getAdditionalParams().keys.map { String(describing: $0) }, id: \.self) { additionalParam in
+                ForEach(
+                    getAdditionalParams().keys.map { String(describing: $0) },
+                    id: \.self
+                ) { additionalParam in
                     HStack {
                         Text(additionalParam)
                         Spacer()
-                        Text(getAdditionalParams()[additionalParam] ?? "")
+                        Text("\(getAdditionalParams()[additionalParam] ?? "")")
                     }
                 }
                 Divider()
@@ -70,11 +76,16 @@ struct MainView: View {
             Spacer()
             VStack(spacing: 10) {
                 Button("Get Access Token and additional params") {
-                    controller.getAccessToken(additionalParams: ["customKey": "customValue"])
+                    controller.getAccessToken(additionalParams: [
+                        "customKey": "customValue"
+                    ])
                     controller.getLastAdditionalParams()
                 }
                 Button("Get claims") {
                     controller.getClaims()
+                }
+                Button("Revoke") {
+                    controller.revoke()
                 }
                 Button("Logout") {
                     controller.logout(viewController: getViewController())
@@ -91,7 +102,7 @@ struct MainView: View {
         String(describing: controller.claims?[key] ?? "")
     }
 
-    private func getAdditionalParams() -> [String: String] {
+    private func getAdditionalParams() -> [String: Any] {
         controller.additionalParams ?? [:]
     }
 

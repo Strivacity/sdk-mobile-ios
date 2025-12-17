@@ -11,24 +11,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             !issuer.isEmpty,
             let redirect = infoDictionary["REDIRECT_URL"] as? String,
             !redirect.isEmpty,
-            let postLogout = infoDictionary["POST_LOGOUT_REDIRECT_URL"] as? String,
+            let postLogout = infoDictionary["POST_LOGOUT_REDIRECT_URL"]
+                as? String,
             !postLogout.isEmpty,
             let clientId = infoDictionary["CLIENT_ID"] as? String,
-            !clientId.isEmpty else {
+            !clientId.isEmpty
+        else {
             fatalError("There were missing configuration attributes")
         }
 
+        let issuerUrl = URL(string: issuer.replacing("||", with: "//"))!
+        let redirectUrl = URL(string: redirect.replacing("||", with: "//"))!
+        let postLogoutUrl = URL(string: postLogout.replacing("||", with: "//"))!
+
         provider = AuthProvider.create(
-            issuer: URL(string: issuer)!,
-            redirectUri: URL(string: redirect)!,
+            issuer: issuerUrl,
+            redirectUri: redirectUrl,
             clientId: clientId,
             storage: CustomStorageImpl()
         )
         .withScopes(["profile", "email"])
-        .withPostLogoutUri(URL(string: postLogout)!)
+        .withPostLogoutUri(postLogoutUrl)
     }
 
-    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    func application(
+        _: UIApplication,
+        open url: URL,
+        options _: [UIApplication.OpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
         provider.resumeExternalUserAgentFlow(url: url)
     }
 }

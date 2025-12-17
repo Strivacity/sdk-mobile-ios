@@ -291,6 +291,70 @@ public class AuthProvider {
         log("getLastReceivedClaims called")
         return authStateManager.getCurrentState()?.getClaims()
     }
+    
+    public func revoke(finished callback: @escaping (Error?) -> Void) {
+        log("revoke called")
+
+        guard let currentState = authStateManager.getCurrentState() else {
+            log("currentState is nil")
+            return
+        }
+
+        guard
+            let revocationEndpoint = currentState.getConfiguration()?
+                .revocableEndpoint
+        else {
+            log("revocation endpoint is nil")
+            return
+        }
+
+        guard let refreshToken = currentState.getRefreshToken() else {
+            log("refresh token is nil")
+            return
+        }
+
+        var request = URLRequest(url: revocationEndpoint)
+        request.httpMethod = "POST"
+        request.setValue(
+            "application/x-www-form-urlencoded",
+            forHTTPHeaderField: "Content-Type"
+        )
+
+        var bodyComponents = URLComponents()
+        bodyComponents.queryItems = [
+            URLQueryItem(name: "token", value: refreshToken),
+            URLQueryItem(name: "token_type_hint", value: "refresh_token"),
+            URLQueryItem(name: "client_id", value: clientId),
+        ]
+
+        request.httpBody = bodyComponents.query?.data(using: .utf8)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.log("Revocation request failed")
+                    callback(error)
+                    return
+                }
+
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    self.log("Unexpected response")
+                    callback(CustomError.unexpected)
+                    return
+                }
+
+                // Revocation endpoint returns 200 on success
+                if httpResponse.statusCode == 200 {
+                    self.log("Token revoked successfully")
+                    self.authStateManager.resetCurrentState()
+                    callback(nil)
+                } else {
+                    self.log("Token revocation failed")
+                    callback(CustomError.unexpected)
+                }
+            }
+        }.resume()
+    }
 
     /// This method tries to log out the authenticated account, and set the current state. If the state
     /// has no configuration, then reset the storage and call the callback with nil.
@@ -400,6 +464,20 @@ public class AuthProvider {
     }
 }
 
+extension OIDServiceConfiguration {
+    var revocableEndpoint: URL? {
+        get {
+            guard
+                let revocableEndpoint = self.discoveryDocument?
+                    .discoveryDictionary["revocation_endpoint"] as? String
+            else {
+                return nil
+            }
+            return URL(string: revocableEndpoint)
+        }
+    }
+}
+
 extension OIDAuthState {
     func getClaims() -> [AnyHashable: Any]? {
         if let idToken = lastTokenResponse?.idToken {
@@ -410,6 +488,10 @@ extension OIDAuthState {
 
     func getAccessToken() -> String? {
         lastTokenResponse?.accessToken
+    }
+    
+    func getRefreshToken() -> String? {
+        lastTokenResponse?.refreshToken
     }
 
     func getConfiguration() -> OIDServiceConfiguration? {
