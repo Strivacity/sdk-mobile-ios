@@ -2,15 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ISSUER_URL</key>
-	<string>$(ISSUER_URL)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>sty</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.strivacity.sdk.demoapp</string>
+			</array>
+		</dict>
+	</array>
 	<key>CLIENT_ID</key>
 	<string>$(CLIENT_ID)</string>
-	<key>REDIRECT_URL</key>
-	<string>$(REDIRECT_URL)</string>
+	<key>ISSUER_URL</key>
+	<string>$(ISSUER_URL)</string>
 	<key>POST_LOGOUT_REDIRECT_URL</key>
 	<string>$(POST_LOGOUT_REDIRECT_URL)</string>
-	<key>NSFaceIDUsageDescription</key>
-	<string>This app uses Face ID to authenticate the user for secure access.</string>
+	<key>REDIRECT_URL</key>
+	<string>$(REDIRECT_URL)</string>
 </dict>
 </plist>

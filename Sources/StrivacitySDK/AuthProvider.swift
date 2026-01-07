@@ -16,6 +16,7 @@ public class AuthProvider {
     private var uiLocales: String?
     private var prompts: Set<String>?
     private var postLogoutUri: URL?
+    private var audiences: Set<String>?
 
     private var authStateManager: AuthStateManager
 
@@ -139,6 +140,11 @@ public class AuthProvider {
         self.postLogoutUri = postLogoutUri
         return self
     }
+    
+    public func withAudiences(_ audiences: Set<String>) -> AuthProvider {
+        self.audiences = audiences
+        return self
+    }
 
     /// Using this method you can perform a PKCE Authorization Code flow with token exchange.
     /// In the case of a successful login, the success callback is called returning the accessToken and claims.
@@ -191,6 +197,12 @@ public class AuthProvider {
             }
             if let prompts = self.prompts {
                 additionalParams["prompt"] = prompts.joined(separator: " ")
+            }
+
+            if let audiences = self.audiences?.map({ aud in
+                aud.trimmingCharacters(in: .whitespacesAndNewlines)
+            }).filter({ aud in !aud.isEmpty }).nilIfEmpty {
+                additionalParams["audience"] = audiences.joined(separator: " ")
             }
 
             let request = OIDAuthorizationRequest(
@@ -435,6 +447,14 @@ extension CustomError: LocalizedError {
             return NSLocalizedString("You have to perform a login before use this", comment: "Custom error")
         case .appDelegate:
             return NSLocalizedString("Error accessing AppDelegate", comment: "Custom error")
+        }
+    }
+}
+
+extension Array {
+    var nilIfEmpty: [Element]? {
+        get {
+            return isEmpty ? nil : self
         }
     }
 }

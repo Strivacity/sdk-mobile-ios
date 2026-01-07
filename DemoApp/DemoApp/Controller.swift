@@ -5,7 +5,7 @@ class UIController: ObservableObject {
     @Published var errorText: String?
     @Published var accessToken: String?
     @Published var claims: [AnyHashable: Any]?
-    @Published var additionalParams: [String: String]?
+    @Published var additionalParams: [String: Any]?
     @Published var isAuthenticated = false
 
     let appDelegate: AppDelegate
@@ -14,9 +14,11 @@ class UIController: ObservableObject {
         self.appDelegate = appDelegate
     }
 
-    func startFlow(viewController: UIViewController) {
+    func startFlow(viewController: UIViewController,flowConfiguration: ((AuthProvider) -> Void)? = nil) {
         let additionalParams = ["customKey": "customValue"]
-        appDelegate.provider.startFlow(
+        flowConfiguration?(appDelegate.provider)
+        appDelegate.provider
+            .startFlow(
             viewController: viewController,
             refreshTokenAdditionalParameters: additionalParams
         ) { accessToken, claims in

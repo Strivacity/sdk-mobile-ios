@@ -11,11 +11,11 @@
 		1C49916A2A4EF83900D293C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4991692A4EF83900D293C6 /* ContentView.swift */; };
 		1C49916C2A4EF83A00D293C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C49916B2A4EF83A00D293C6 /* Assets.xcassets */; };
 		1C49916F2A4EF83A00D293C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C49916E2A4EF83A00D293C6 /* Preview Assets.xcassets */; };
-		1C49917A2A4EF9A700D293C6 /* StrivacitySDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1C4991792A4EF9A700D293C6 /* StrivacitySDK */; };
 		1C49917C2A4EF9DB00D293C6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49917B2A4EF9DB00D293C6 /* Controller.swift */; };
 		1C49917E2A4EF9F800D293C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C49917D2A4EF9F800D293C6 /* AppDelegate.swift */; };
 		1C4991812A4EFAB000D293C6 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1C4991802A4EFAB000D293C6 /* Config.xcconfig */; };
 		1C8452C72C9D97C30041D040 /* CustomStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8452C62C9D97C30041D040 /* CustomStorageImpl.swift */; };
+		C201DA962F1795C70095B063 /* StrivacitySDK in Frameworks */ = {isa = PBXBuildFile; productRef = C201DA952F1795C70095B063 /* StrivacitySDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C49917A2A4EF9A700D293C6 /* StrivacitySDK in Frameworks */,
+				C201DA962F1795C70095B063 /* StrivacitySDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				1C4991792A4EF9A700D293C6 /* StrivacitySDK */,
+				C201DA952F1795C70095B063 /* StrivacitySDK */,
 			);
 			productName = DemoApp;
 			productReference = 1C4991642A4EF83900D293C6 /* DemoApp.app */;
@@ -308,12 +308,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID to authenticate the user for secure access.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -326,6 +329,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.strivacity.sdk.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,12 +342,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoApp/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID to authenticate the user for secure access.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -356,6 +363,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.strivacity.sdk.demoapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,7 +394,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1C4991792A4EF9A700D293C6 /* StrivacitySDK */ = {
+		C201DA952F1795C70095B063 /* StrivacitySDK */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = StrivacitySDK;
 		};
