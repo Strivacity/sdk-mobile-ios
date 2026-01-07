@@ -25,9 +25,19 @@ struct ContentView: View {
 struct LoginView: View {
     @ObservedObject var controller: UIController
 
+    @State private var audiences: String = ""
+
     var body: some View {
+
+        CustomAudienceInput(audiences: $audiences)
+
         Button("Login") {
-            controller.startFlow(viewController: getViewController())
+            controller
+                .startFlow(viewController: getViewController()) {
+                    $0.withAudiences(
+                        Set(audiences.split(separator: " ").map(String.init))
+                    )
+                }
         }
         Text(controller.errorText ?? "")
     }
@@ -36,6 +46,43 @@ struct LoginView: View {
         let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         return scene!.keyWindow!.rootViewController!
     }
+}
+
+private struct CustomAudienceInput: View {
+
+    @Binding var audiences: String
+
+    public var body: some View {
+
+        VStack(alignment: .leading) {
+            HStack {
+                TextField("Custom Audiences", text: $audiences)
+                    .textFieldStyle(.roundedBorder)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+
+                Button(action: {
+                    if let url = URL(
+                        string: CustomAudienceInput.documentationUrl
+                    ) {
+                        UIApplication.shared.open(url)
+                    }
+                }) {
+                    Image(systemName: "info.circle")
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            Text("Audiences separated by space")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(8)
+    }
+
+    static private let documentationUrl: String =
+        "https://docs.strivacity.com/docs/oauth2-oidc-properties-setup#allowed-custom-audiences"
 }
 
 struct MainView: View {
@@ -49,7 +96,10 @@ struct MainView: View {
                     Text(controller.accessToken ?? "")
                 }
                 Divider()
-                ForEach(getClaims().keys.map { String(describing: $0) }, id: \.self) { claim in
+                ForEach(
+                    getClaims().keys.map { String(describing: $0) },
+                    id: \.self
+                ) { claim in
                     HStack {
                         Text(claim)
                         Spacer()
@@ -57,11 +107,14 @@ struct MainView: View {
                     }
                 }
                 Divider()
-                ForEach(getAdditionalParams().keys.map { String(describing: $0) }, id: \.self) { additionalParam in
+                ForEach(
+                    getAdditionalParams().keys.map { String(describing: $0) },
+                    id: \.self
+                ) { additionalParam in
                     HStack {
                         Text(additionalParam)
                         Spacer()
-                        Text(getAdditionalParams()[additionalParam] ?? "")
+                        Text("\(getAdditionalParams()[additionalParam] ?? "")")
                     }
                 }
                 Divider()
@@ -70,7 +123,9 @@ struct MainView: View {
             Spacer()
             VStack(spacing: 10) {
                 Button("Get Access Token and additional params") {
-                    controller.getAccessToken(additionalParams: ["customKey": "customValue"])
+                    controller.getAccessToken(additionalParams: [
+                        "customKey": "customValue"
+                    ])
                     controller.getLastAdditionalParams()
                 }
                 Button("Get claims") {
@@ -91,7 +146,7 @@ struct MainView: View {
         String(describing: controller.claims?[key] ?? "")
     }
 
-    private func getAdditionalParams() -> [String: String] {
+    private func getAdditionalParams() -> [String: Any] {
         controller.additionalParams ?? [:]
     }
 
