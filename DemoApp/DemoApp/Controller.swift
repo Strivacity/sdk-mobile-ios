@@ -37,20 +37,29 @@ class UIController: ObservableObject {
     }
 
     func getAccessToken(additionalParams: [String: String] = [:]) {
-        appDelegate.provider.getAccessToken(refreshTokenAdditionalParameters: additionalParams) { accessToken in
+        appDelegate.provider.getAccessToken(
+            refreshTokenAdditionalParameters: additionalParams
+        ) { accessToken in
             self.accessToken = accessToken
-        }
-        onError: { error in
+        } onError: { error in
             self.errorText = error.localizedDescription
         }
     }
 
     func getLastAdditionalParams() {
-        additionalParams = appDelegate.provider.getLastTokenResponseAdditionalParameters()
+        additionalParams = appDelegate.provider
+            .getLastTokenResponseAdditionalParameters()
     }
 
     func getClaims() {
         claims = appDelegate.provider.getLastRetrievedClaims()
+    }
+
+    func revoke() {
+        appDelegate.provider.revoke { error in
+            self.errorText = error?.localizedDescription
+            self.isAuthenticated = false
+        }
     }
 
     func logout(viewController: UIViewController) {
@@ -62,7 +71,9 @@ class UIController: ObservableObject {
 
     func checkAuthenticated() {
         let additionalParams = ["customKey": "customValue"]
-        appDelegate.provider.checkAuthenticated(refreshTokenAdditionalParameters: additionalParams) { isAuthenticated in
+        appDelegate.provider.checkAuthenticated(
+            refreshTokenAdditionalParameters: additionalParams
+        ) { isAuthenticated in
             self.isAuthenticated = isAuthenticated
         }
     }
