@@ -319,12 +319,19 @@ public class AuthProvider {
             log("revocation endpoint is nil")
             return
         }
-
-        guard let refreshToken = currentState.getRefreshToken() else {
-            log("refresh token is nil")
+        
+        var tokenToRevoke: (token: String, typeHint: String)? = nil
+        if let refreshToken = currentState.getRefreshToken() {
+            tokenToRevoke = (token: refreshToken, typeHint: "refresh_token")
+        } else if let accessToken = currentState.getAccessToken() {
+            tokenToRevoke = (token: accessToken, typeHint: "access_token")
+        }
+        
+        guard let tokenToRevoke = tokenToRevoke else {
+            log("No token to revoke")
             return
         }
-
+        
         var request = URLRequest(url: revocationEndpoint)
         request.httpMethod = "POST"
         request.setValue(
@@ -334,8 +341,8 @@ public class AuthProvider {
 
         var bodyComponents = URLComponents()
         bodyComponents.queryItems = [
-            URLQueryItem(name: "token", value: refreshToken),
-            URLQueryItem(name: "token_type_hint", value: "refresh_token"),
+            URLQueryItem(name: "token", value: tokenToRevoke.token),
+            URLQueryItem(name: "token_type_hint", value: tokenToRevoke.typeHint),
             URLQueryItem(name: "client_id", value: clientId),
         ]
 
